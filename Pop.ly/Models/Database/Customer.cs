@@ -20,6 +20,7 @@ namespace Pop.ly.Models.Database
         public string DeliveryCity { get; set; }
         public string EmailAddress { get; set; }
         public string PhoneNumber { get; set; }
+        public string MobilePhone { get; set; }
 
         /* Don't uncomment this yet. I have no idea how to do this yet. Needs research!
          * 
