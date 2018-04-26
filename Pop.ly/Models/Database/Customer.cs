@@ -21,7 +21,7 @@ namespace Pop.ly.Models.Database
         public string EmailAddress { get; set; }
         public string PhoneNumber { get; set; }
 
-        /* Don't uncomment this yet.
+        /* Don't uncomment this yet. I have no idea how to do this yet. Needs research!
          * 
          * public virtual ApplicationUser User { get; set; }
         */
