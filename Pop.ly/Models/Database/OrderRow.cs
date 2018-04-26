@@ -11,5 +11,8 @@ namespace Pop.ly.Models.Database
         public int OrderID { get; set; }
         public int MovieID { get; set; }
         public decimal Price { get; set; }
+
+        public virtual Order Order { get; set; }
+        public virtual Movie Movie { get; set; }
     }
 }

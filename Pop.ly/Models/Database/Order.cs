@@ -9,5 +9,7 @@ namespace Pop.ly.Models.Database
     {
         public int ID { get; set; }
         public int CustomerID { get; set; }
+
+        public virtual Customer Customer { get; set; }
     }
 }

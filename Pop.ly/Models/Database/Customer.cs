@@ -20,5 +20,10 @@ namespace Pop.ly.Models.Database
         public string DeliveryCity { get; set; }
         public string EmailAddress { get; set; }
         public string PhoneNumber { get; set; }
+
+        /* Don't uncomment this yet.
+         * 
+         * public virtual ApplicationUser User { get; set; }
+        */
     }
 }
