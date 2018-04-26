@@ -59,8 +59,15 @@ namespace Pop.ly.Migrations
                 EmailAddress = "pia_loves_bunnies@floof.com.au",
                 PhoneNumber = "0708742354"
             };
-
             context.Customers.AddOrUpdate(c => c.ID, c1, c2, c3);
+
+            var m1 = new Movie
+            {
+
+                CoverArt = @"\Content\Images\Movies\Interstellar_Cover.jpg",
+
+            };
+
         }
     }
 }
