@@ -10,7 +10,7 @@ namespace Pop.ly.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(Pop.ly.Models.ApplicationDbContext context)
