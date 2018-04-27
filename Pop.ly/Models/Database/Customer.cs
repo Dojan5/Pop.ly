@@ -12,18 +12,21 @@ namespace Pop.ly.Models.Database
         public string FirstName { get; set; }
         [Display(Name ="Last Name"),Required]
         public string LastName { get; set; }
+        [Display(Name ="Billing Address")]
         public string BillingAddress { get; set; }
+        [Display(Name = "Billing Zip")]
         public string BillingZip { get; set; }
+        [Display(Name = "Billing City")]
         public string BillingCity { get; set; }
+        [Display(Name = "Delivery Address")]
         public string DeliveryAddress { get; set; }
+        [Display(Name = "Delivery Zip")]
         public string DeliveryZip { get; set; }
+        [Display(Name = "Delivery City")]
         public string DeliveryCity { get; set; }
+        [Display(Name = "Email Address")]
         public string EmailAddress { get; set; }
+        [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
-
-        /* Don't uncomment this yet. I have no idea how to do this yet. Needs research!
-         * 
-         * public virtual ApplicationUser User { get; set; }
-        */
     }
 }
