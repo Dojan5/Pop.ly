@@ -20,7 +20,7 @@ namespace Pop.ly.Models.Database
         public string Description { get; set; }
         //Sets the maximum range. 
         [Range(0,5)]
-        public int Rating { get; set; }
+        public int Rating { get; set; } = 0;
         public decimal Price { get; set; }
         public string CoverArt { get; set; }
         public string PromoArt { get; set; }

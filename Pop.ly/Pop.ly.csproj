@@ -265,8 +265,12 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Movies\iceage3_cover.jpg" />
+    <Content Include="Content\Images\Movies\iceage3_promo.jpg" />
     <Content Include="Content\Images\Movies\Interstellar_Cover.jpg" />
-    <Content Include="Content\Images\Movies\Interstellar_Pomo.jpg" />
+    <Content Include="Content\Images\Movies\Interstellar_Promo.jpg" />
+    <Content Include="Content\Images\Movies\notebook_cover.jpg" />
+    <Content Include="Content\Images\Movies\notebook_promo.jpg" />
     <Content Include="Content\Images\ph1.svg" />
     <Content Include="Content\Images\ph2.svg" />
     <Content Include="Content\Images\ph3.svg" />
@@ -371,10 +375,11 @@
     <Content Include="Views\Shared\_MoviePromoCarouselPartial.cshtml" />
     <Content Include="Views\Shared\_MovieShowCasePartial.cshtml" />
     <Content Include="Views\Customer\EditOwnDetails.cshtml" />
+    <Content Include="Views\Shared\_MovieDetailPartial.cshtml" />
+    <Content Include="Views\Movie\MovieDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Movie\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
