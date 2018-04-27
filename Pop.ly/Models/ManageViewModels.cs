@@ -5,6 +5,11 @@ using Microsoft.Owin.Security;
 
 namespace Pop.ly.Models
 {
+    public class AccountSettingsViewModel
+    {
+        public IndexViewModel IndexVieWModel { get; set; }
+        public ChangePasswordViewModel ChangePasswordViewModel { get; set; }
+    }
     public class IndexViewModel
     {
         public bool HasPassword { get; set; }
@@ -12,6 +17,7 @@ namespace Pop.ly.Models
         public string PhoneNumber { get; set; }
         public bool TwoFactor { get; set; }
         public bool BrowserRemembered { get; set; }
+        public ApplicationUser User { get; set; }
     }
 
     public class ManageLoginsViewModel

@@ -8,11 +8,11 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Hello, @User.Identity.GetUserName() <i class="fas fa-user-circle"></i>
+                    @User.Identity.GetUserName() <i class="fas fa-user-circle"></i>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="accountDropdown">
-                    <li class="dropdown-item">@Html.ActionLink("Manage Account", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
-                    <li class="dropdown-item"><a href="javascript:document.getElementById('logoutForm').submit()">Log out</a></li>
+                    <li >@Html.ActionLink("Manage Account", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class ="dropdown-item"})</li>
+                    <li ><a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Log out</a></li>
                 </ul>
                 </li>
         </ul>
