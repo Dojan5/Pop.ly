@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Pop.ly.Models;
+using Pop.ly.Models.Database;
 
 namespace Pop.ly.Controllers
 {
@@ -151,7 +152,8 @@ namespace Pop.ly.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var cust = new Customer { FirstName = model.FirstName, LastName = model.LastName, EmailAddress = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Customer = cust };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
