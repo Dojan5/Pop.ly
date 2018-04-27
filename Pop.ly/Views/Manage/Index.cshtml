@@ -4,7 +4,7 @@
 }
 
 <div class="pt-4">
-    <h2>Hello @User.Identity.Name</h2>
+    <h2>Hello, @Model.User.Customer.FirstName</h2>
     <p class="text-success">@ViewBag.StatusMessage</p>
     <div>
         <h4>Change your account settings</h4>
@@ -27,7 +27,7 @@
                             <dd>
                                 [
                                 @if (Model.HasPassword)
-            {
+                                {
                                     @Html.ActionLink("Change your password", "ChangePassword")
                                 }
                                 else

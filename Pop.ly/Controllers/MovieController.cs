@@ -13,5 +13,10 @@ namespace Pop.ly.Controllers
         {
             return View();
         }
+
+        public ActionResult CreateMovie()
+        {
+            return View();
+        }
     }
 }
