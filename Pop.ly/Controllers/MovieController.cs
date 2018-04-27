@@ -20,7 +20,7 @@ namespace Pop.ly.Controllers
         public ActionResult MovieDetails()
         {
             var Movie = new Movie();
-            var dbm = db.Movies.Select(m => m);
+            var dbm = db.Movies.Where(m => m.ID == 3).Select(m => m);
             Movie = dbm.First();
             return View(Movie);
         }

@@ -48,3 +48,10 @@ textarea {
 .RibbonContent img {
     max-height: 240px;
 }
+#promo-carousel img {
+    width: 80%;
+}
+
+#DetailCover {
+    width: 100%;
+}

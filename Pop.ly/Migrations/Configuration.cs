@@ -74,7 +74,7 @@ namespace Pop.ly.Migrations
                 Price = 20,
                 CoverArt = @"\Content\Images\Movies\Interstellar_Cover.jpg",
                 PromoArt = @"\Content\Images\Movies\Interstellar_Promo.jpg",
-                TrailerURL = @"https://www.youtube.com/watch?v=2LqzF5WauAw"
+                TrailerURL = @"2LqzF5WauAw"
             };
 
             var m2 = new Movie
@@ -87,8 +87,8 @@ namespace Pop.ly.Migrations
                 Price = 5,
                 CoverArt = @"\Content\Images\Movies\notebook_cover.jpg",
                 PromoArt = @"\Content\Images\Movies\notebook_promo.jpg",
-                TrailerURL = @"https://www.youtube.com/watch?v=yDJIcYE32NU"
-
+                TrailerURL = @"yDJIcYE32NU"
+  
             };
 
             var m3 = new Movie
@@ -101,7 +101,7 @@ namespace Pop.ly.Migrations
                 Price = 10,
                 CoverArt = @"\Content\Images\Movies\iceage3_cover.jpg",
                 PromoArt = @"\Content\Images\Movies\iceage3_promo.jpg",
-                TrailerURL = @"https://www.youtube.com/watch?v=Y_nSwh2WjAM"
+                TrailerURL = @"Y_nSwh2WjAM"
 
             };
 

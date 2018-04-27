@@ -3,89 +3,113 @@
 <div>
     <h4>Movie</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ReleaseYear)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ReleaseYear)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Director)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Director)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Genre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Genre)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Rating)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Rating)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CoverArt)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CoverArt)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PromoArt)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PromoArt)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TrailerURL)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TrailerURL)
-        </dd>
-
-    </dl>
+    <div id="promo-background" style="background-image: url.Content(@Model.PromoArt)">
+        <div class="row">
+            <div class="col-sm-3"><img id="DetailCover" src="@Model.CoverArt" /></div>
+            <div class="col-sm-7">
+                <div class="row">
+                    <h4>@Model.Title</h4>
+                </div>
+                <div class="row pt-3">
+                    @Model.Genre | @Model.ReleaseYear
+                </div>
+                <div class="row pt-1">
+                    @Model.Description
+                </div>
+            </div>
+        </div>
+        <iframe class="pt-2" width="560" height="315" src="https://www.youtube.com/embed/@Model.TrailerURL" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
 </div>
+
+<hr />
+
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.Title)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Title)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.ReleaseYear)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.ReleaseYear)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Director)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Director)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Genre)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Genre)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Description)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Description)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Rating)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Rating)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Price)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Price)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.CoverArt)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.CoverArt)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.PromoArt)
+    </dt>
+
+    <dd>
+        <img src="@Model.PromoArt" />
+        @Html.DisplayFor(model => model.PromoArt)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.TrailerURL)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.TrailerURL)
+    </dd>
+
+</dl>
+</div>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
     @Html.ActionLink("Back to List", "Index")
