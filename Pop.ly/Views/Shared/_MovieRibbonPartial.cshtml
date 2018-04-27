@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Pop.ly.Models.Database.Movie>
+
+<hr />
+<section class="MovieRibbon mt-2">
+    @foreach (var movie in Model)
+    {
+        <div class="RibbonContent">
+            <a href="#"><img src="@movie.CoverArt" /></a>
+        </div>
+    }
+</section>
+<hr />

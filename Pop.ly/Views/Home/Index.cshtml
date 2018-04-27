@@ -1,10 +1,17 @@
-﻿@{
+﻿@using Pop.ly.Models;
+@using Pop.ly.Models.Database
+@model HomeIndexVieWModel
+
+@{
     ViewBag.Title = "Home Page";
 }
 <div class="container pt-4">
-    @Html.Partial("_MoviePromoCarouselPartial")
+    @Html.Partial("_MoviePromoCarouselPartial", Model.Carousel)
 </div>
 
+@Html.Partial("_MovieRibbonPartial", Model.Popular)
+
+@Html.Partial("_MovieRibbonPartial", Model.RecentlyReleased)
 <div class="row pt-4">
     <div class="col-md-4">
         <h2>Getting started</h2>

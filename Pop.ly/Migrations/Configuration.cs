@@ -5,6 +5,9 @@ namespace Pop.ly.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
     using Pop.ly.Models.Database;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Microsoft.AspNet.Identity;
+    using Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Pop.ly.Models.ApplicationDbContext>
     {
@@ -85,7 +88,7 @@ namespace Pop.ly.Migrations
                 CoverArt = @"\Content\Images\Movies\notebook_cover.jpg",
                 PromoArt = @"\Content\Images\Movies\notebook_promo.jpg",
                 TrailerURL = @"https://www.youtube.com/watch?v=yDJIcYE32NU"
-  
+
             };
 
             var m3 = new Movie
@@ -100,13 +103,33 @@ namespace Pop.ly.Migrations
                 PromoArt = @"\Content\Images\Movies\iceage3_promo.jpg",
                 TrailerURL = @"https://www.youtube.com/watch?v=Y_nSwh2WjAM"
 
-             };
-
-        
+            };
 
 
-          
-            context.Movies.AddOrUpdate (m => m.ID, m1, m2, m3);
+
+
+
+            context.Movies.AddOrUpdate(m => m.ID, m1, m2, m3);
+            //Seeds an administrator role if it doesn't already exist
+            if (!context.Roles.Any(r => r.Name == "Administrator"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole { Name = "Administrator" };
+                manager.Create(role);
+            }
+            //Seeds an administrator account. Obviously this is a poor idea for an actual application
+            if (!context.Users.Any(u => u.UserName == "Administrator"))
+            {
+                var cust = new Customer { FirstName = "Admin", LastName = "Administrator" };
+                var store = new UserStore<ApplicationUser>(context);
+                var manager = new UserManager<ApplicationUser>(store);
+                var user = new ApplicationUser { UserName = "Admin", Email="admin@app.com", Customer = cust  };
+                
+
+                manager.Create(user, "P@ssword1");
+                manager.AddToRole(user.Id, "Administrator");
+            }
         }
     }
 }

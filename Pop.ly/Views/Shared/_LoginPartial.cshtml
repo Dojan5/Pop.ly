@@ -11,8 +11,13 @@
                     @User.Identity.GetUserName() <i class="fas fa-user-circle"></i>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="accountDropdown">
-                    <li >@Html.ActionLink("Manage Account", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class ="dropdown-item"})</li>
-                    <li ><a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Log out</a></li>
+                    @if (Request.IsAuthenticated && User.IsInRole("Administrator"))
+                    {
+                        <li>@Html.ActionLink("Administrate Website", "Index", "Administration", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })</li>
+                        <div class="dropdown-divider"></div>
+                    }
+                    <li>@Html.ActionLink("Manage Account", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class ="dropdown-item"})</li>
+                    <li><a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Log out</a></li>
                 </ul>
                 </li>
         </ul>
@@ -26,8 +31,8 @@ else
                 Account <i class="fas fa-user-circle"></i>
             </a>
             <ul class="dropdown-menu" aria-labelledby="accountDropdown">
-                <li class="dropdown-item">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-                <li class="dropdown-item">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                <li class="dropdown-item">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class ="dropdown-item" })</li>
+                <li class="dropdown-item">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class="dropdown-item" })</li>
             </ul>
         </li>
     </ul>

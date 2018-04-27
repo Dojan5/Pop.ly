@@ -22,6 +22,29 @@ textarea {
     max-width: 280px;
 }
 
-#promo-carousel img {
-    width: 80%;
+.carousel-item img {
+    background-color: black;
+  object-fit: none;
+  object-position: center;
+  width: 100%;
+  max-height: 500px;
+}
+
+.carousel-caption {
+    text-shadow: 2px 2px 6px #888888;
+}
+
+.MovieRibbon {
+    display: flex;
+    min-width: 100%;
+    min-height: 200px;
+}
+
+.RibbonContent {
+    margin: 6px;
+    max-height: 260px;
+}
+
+.RibbonContent img {
+    max-height: 240px;
 }

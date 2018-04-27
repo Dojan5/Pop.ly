@@ -1,4 +1,9 @@
-﻿<div id="promo-carousel" class="carousel slide" data-ride="carousel">
+﻿@using Pop.ly.Models.Database
+@model IEnumerable<Movie>
+
+@{ Movie[] movies = Model.ToArray();
+        }
+<div id="promo-carousel" class="carousel slide" data-ride="carousel">
     @*This code handles the indicators*@
     <ol class="carousel-indicators">
         <li data-target="#promo-carousel" data-slide-to="0" class="active"></li>
@@ -9,16 +14,22 @@
     @*Handles the carousel items. Figure out a system to do this dynamically.*@
     <div class="carousel-inner" role="listbox">
         <div class="carousel-item active">
-            <img src="~/Content/Images/Movies/Interstellar_Promo.jpg" />
+            <img src="@movies[0].PromoArt" />
             <div class="carousel-caption">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat sapien, accumsan ac orci et, convallis volutpat mauris. Proin non vestibulum nisi. Integer lectus lectus, auctor et interdum eu, porttitor sed tortor.</p>
+                <p>@movies[0].Description.Substring(0, 180) ...</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="~/Content/Images/ph2.svg" />
+            <img src="@movies[1].PromoArt" />
+            <div class="carousel-caption">
+                <p>@movies[1].Description.Substring(0, 180) ...</p>
+            </div>
         </div>
         <div class="carousel-item">
-            <img src="~/Content/Images/ph3.svg" />
+            <img src="@movies[2].PromoArt" />
+            <div class="carousel-caption">
+                <p>@movies[2].Description.Substring(0, 180) ...</p>
+            </div>
         </div>
     </div>
     <a class="carousel-control-prev" href="#promo-carousel" role="button" data-slide="prev">
