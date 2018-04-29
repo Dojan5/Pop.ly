@@ -240,3 +240,4 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/Pop.ly/Views/Account/Register.cshtml

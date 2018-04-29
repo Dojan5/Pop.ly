@@ -121,10 +121,10 @@ namespace Pop.ly.Migrations
             //Seeds an administrator account. Obviously this is a poor idea for an actual application
             if (!context.Users.Any(u => u.UserName == "Administrator"))
             {
-                var cust = new Customer { FirstName = "Admin", LastName = "Administrator" };
+                var cust = new Customer { FirstName = "Admin", LastName = "I. Strator" };
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
-                var user = new ApplicationUser { UserName = "Admin", Email="admin@app.com", Customer = cust  };
+                var user = new ApplicationUser { UserName = "admin@app.com", Email="admin@app.com", Customer = cust  };
                 
 
                 manager.Create(user, "P@ssword1");

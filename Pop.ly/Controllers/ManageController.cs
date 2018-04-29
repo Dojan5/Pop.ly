@@ -66,17 +66,17 @@ namespace Pop.ly.Controllers
                 : "";
 
             var userId = User.Identity.GetUserId();
-
             var user = db.Users.Find(userId);
 
-            var model = new IndexViewModel
+            var model = new ManageAccountViewModel
             {
                 HasPassword = HasPassword(),
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
                 Logins = await UserManager.GetLoginsAsync(userId),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
-                User = user
+                User = user,
+                ChangePasswordViewModel = new ChangePasswordViewModel()
             };
             return View(model);
         }
