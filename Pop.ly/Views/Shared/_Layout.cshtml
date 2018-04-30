@@ -10,8 +10,9 @@
 </head>
 <body>
     @Html.Partial("_MenuPartial")
+
+    @RenderBody()
     <div class="container-fluid">
-        @RenderBody()
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - Pop.ly</p>
