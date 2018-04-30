@@ -9,5 +9,6 @@ namespace Pop.ly.Models
     public class ShoppingCart
     {
         public List<Movie> Movies { get; set; }
+
     }
 }

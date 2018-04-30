@@ -14,5 +14,7 @@ namespace Pop.ly.Models.Database
         [Range(0,5)]
         public int Rating { get; set; }
         public string Comment { get; set; }
+
+        public virtual Customer Customer { get; set; }
     }
 }
