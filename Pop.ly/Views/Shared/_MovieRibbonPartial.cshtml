@@ -5,7 +5,7 @@
     @foreach (var movie in Model)
     {
         <div class="RibbonContent">
-            <a href="#"><img src="@movie.CoverArt" /></a>
+            <a href="/Movie/?T=@movie.Title&Y=@movie.ReleaseYear"><img src="@movie.CoverArt" /></a>
         </div>
     }
 </section>

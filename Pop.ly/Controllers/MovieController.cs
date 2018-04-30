@@ -13,9 +13,12 @@ namespace Pop.ly.Controllers
     {
          ApplicationDbContext db = new ApplicationDbContext();       
         // GET: Movie
-        public ActionResult Index()
+        public ActionResult Index(string T, int Y)
         {
-            return View();
+            var Movie = new Movie();
+            var dbm = db.Movies.Where(m => m.Title == T && m.ReleaseYear == Y).Select(m => m);
+            Movie = dbm.First();
+            return View(Movie);
         }
         public ActionResult MovieDetails()
         {

@@ -37,13 +37,16 @@ textarea {
 
 .MovieRibbon {
     display: flex;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
     min-width: 100%;
-    min-height: 200px;
+    min-height: 280px;
 }
 
 .RibbonContent {
     margin: 6px;
     max-height: 260px;
+    align-self: center;
 }
 
 .RibbonContent img {

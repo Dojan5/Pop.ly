@@ -104,12 +104,44 @@ namespace Pop.ly.Migrations
                 TrailerURL = @"Y_nSwh2WjAM"
 
             };
+            var m4 = new Movie
+            {
+                Title = "Moana",
+                ReleaseYear = 2016,
+                Director = "Ron Clements",
+                Genre = "Comedy, Adventure",
+                Description = "Moana Waialiki is a sea voyaging enthusiast and the only daughter of a chief in a long line of navigators. When her island's fishermen can't catch any fish and the crops fail, she learns that the demigod Maui caused the blight by stealing the heart of the goddess, Te Fiti. The only way to heal the island is to persuade Maui to return Te Fiti's heart, so Moana sets off on an epic journey across the Pacific. The film is based on stories from Polynesian mythology.",
+                Price = 26,
+                CoverArt = @"\Content\Images\Movies\moana_cover.jpg",
+                PromoArt = @"\Content\Images\Movies\moana_promo.jpg",
+                TrailerURL = @"LKFuXETZUsI"
 
-
-
-
-
-            context.Movies.AddOrUpdate(m => m.ID, m1, m2, m3);
+            };
+            var m5 = new Movie
+            {
+                Title = "Jurassic World",
+                ReleaseYear = 2015,
+                Director = "Colin Trevorrow",
+                Genre = "Action, Adventure, Sci-Fi",
+                Description = "22 years after the original Jurassic Park failed, the new park (also known as Jurassic World) is open for business. After years of studying genetics the scientists on the park genetically engineer a new breed of dinosaur. When everything goes horribly wrong, will our heroes make it off the island?",
+                Price = 24,
+                CoverArt = @"\Content\Images\Movies\jurassic_world_cover.jpg",
+                PromoArt = @"\Content\Images\Movies\jurassic_world_promo.jpg",
+                TrailerURL = @"RFinNxS5KN4"
+            };
+            var m6 = new Movie
+            {
+                Title = "Peter Rabbit",
+                ReleaseYear = 2018,
+                Director = "Will Gluck",
+                Genre = "Action, Adventure, Sci-Fi",
+                Description = "Based on the books by Beatrix Potter: Peter Rabbit (James Corden;) his three sisters: Flopsy (Margot Robbie,) Mopsy (Elizabeth Debicki) and Cotton Tail (Daisy Ridley) and their cousin Benjamin (Colin Moody) enjoy their days harassing Mr McGregor in his vegetable garden. Until one day he dies and no one can stop them roaming across his house and lands for a full day or so. However, when one of Mr McGregor's relatives inherits the house and goes to check it out, he finds much more than he bargained for. What ensues, is a battle of wills between the new Mr McGregor and the rabbits. But when he starts to fall in love with Bea (Rose Byrne,) a real lover of all nature, his feelings towards them begin to change. But is it too late?",
+                Price = 30,
+                CoverArt = @"\Content\Images\Movies\peterrabbit_cover.jpg",
+                PromoArt = @"\Content\Images\Movies\peterrabbit_promo.jpg",
+                TrailerURL = @"7Pa_Weidt08"
+            };
+            context.Movies.AddOrUpdate(m => m.ID, m1, m2, m3, m4, m5, m6);
             //Seeds an administrator role if it doesn't already exist
             if (!context.Roles.Any(r => r.Name == "Administrator"))
             {
