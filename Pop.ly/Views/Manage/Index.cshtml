@@ -3,60 +3,60 @@
     ViewBag.Title = "Manage";
 }
 
-<div class="pt-4">
-    <h2>Hello, @Model.User.Customer.FirstName</h2>
-    <p class="text-success">@ViewBag.StatusMessage</p>
-    <div>
-        <h4>Change your account settings</h4>
-        <hr />
+<div class="container">
+    <div class="pt-4">
+        <h2>Hello, @Model.User.Customer.FirstName</h2>
+        <p class="text-success">@ViewBag.StatusMessage</p>
+        <div>
+            <h4>Change your account settings</h4>
+            <hr />
 
-        <div class="row">
-            <div class="col-3">
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link active" id="v-pills-account-tab" data-toggle="pill" href="#v-pills-account" role="tab" aria-controls="v-pills-account" aria-selected="true">Edit Account</a>
-                    <a class="nav-link" id="v-pills-address-tab" data-toggle="pill" href="#v-pills-address" role="tab" aria-controls="v-pills-address" aria-selected="false">Shipping and Billing Details</a>
-                    <a class="nav-link" id="v-pills-orders-tab" data-toggle="pill" href="#v-pills-orders" role="tab" aria-controls="v-pills-orders" aria-selected="false">Order History</a>
-                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+            <div class="row">
+                <div class="col-3">
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active" id="v-pills-account-tab" data-toggle="pill" href="#v-pills-account" role="tab" aria-controls="v-pills-account" aria-selected="true">Edit Account</a>
+                        <a class="nav-link" id="v-pills-address-tab" data-toggle="pill" href="#v-pills-address" role="tab" aria-controls="v-pills-address" aria-selected="false">Shipping and Billing Details</a>
+                        <a class="nav-link" id="v-pills-orders-tab" data-toggle="pill" href="#v-pills-orders" role="tab" aria-controls="v-pills-orders" aria-selected="false">Order History</a>
+                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-9">
-                <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active" id="v-pills-account" role="tabpanel" aria-labelledby="v-pills-account-tab">
-                        @Html.Partial("_ChangePasswordPartial", Model.ChangePasswordViewModel)
+                <div class="col-9">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="v-pills-account" role="tabpanel" aria-labelledby="v-pills-account-tab">
+                            @Html.Partial("_ChangePasswordPartial", Model.ChangePasswordViewModel)
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-address" role="tabpanel" aria-labelledby="v-pills-address-tab">
+
+
+                            <dl class="dl-horizontal">
+                                <dt>Password:</dt>
+                                <dd>
+                                    [
+                                    @if (Model.HasPassword)
+                                    {
+                                        @Html.ActionLink("Change your password", "ChangePassword")
+                                    }
+                                    else
+                                    {
+                                        @Html.ActionLink("Create", "SetPassword")
+                                    }
+                                    ]
+                                </dd>
+                                <dt>External Logins:</dt>
+                                <dd>
+                                    @Model.Logins.Count [
+                                    @Html.ActionLink("Manage", "ManageLogins") ]
+                                </dd>
+
+
+                            </dl>
+
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-orders" role="tabpanel" aria-labelledby="v-pills-orders-tab">...</div>
+                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
                     </div>
-                    <div class="tab-pane fade" id="v-pills-address" role="tabpanel" aria-labelledby="v-pills-address-tab">
-
-
-                        <dl class="dl-horizontal">
-                            <dt>Password:</dt>
-                            <dd>
-                                [
-                                @if (Model.HasPassword)
-                                {
-                                    @Html.ActionLink("Change your password", "ChangePassword")
-                                }
-                                else
-                                {
-                                    @Html.ActionLink("Create", "SetPassword")
-                                }
-                                ]
-                            </dd>
-                            <dt>External Logins:</dt>
-                            <dd>
-                                @Model.Logins.Count [
-                                @Html.ActionLink("Manage", "ManageLogins") ]
-                            </dd>
-
-
-                        </dl>
-
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-orders" role="tabpanel" aria-labelledby="v-pills-orders-tab">...</div>
-                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
                 </div>
             </div>
         </div>
-
-
     </div>
 </div>
