@@ -16,5 +16,6 @@ namespace Pop.ly.Models.Database
         public string Comment { get; set; }
 
         public virtual Customer Customer { get; set; }
+        public virtual Movie Movie { get; set; }
     }
 }

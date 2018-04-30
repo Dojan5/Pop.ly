@@ -91,3 +91,7 @@ textarea {
     /* Handles the gradient over the promo art on the movie details */
     background: radial-gradient(farthest-corner at 40px 40px, rgba(255,255,255,1) 50%,rgba(255,255,255,0.8) 75%,rgba(255,255,255,0) 100%);
 }
+
+.review-section {
+    min-width: 100%;
+}

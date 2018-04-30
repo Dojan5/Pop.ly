@@ -166,6 +166,32 @@ namespace Pop.ly.Migrations
                 TrailerURL = @"rOEHpkZCc1Y"
             };
             context.Movies.AddOrUpdate(m => m.ID, m1, m2, m3, m4, m5, m6, m7, m8);
+            //Seeds reviews for Interstellar
+            var rev1 = new Review
+            {
+                Customer = c1,
+                Movie = m1,
+                Rating = 5,
+                Comment = "This movie is totally awesome. It completely changed my life. Spoiler warning: when the thing happened I was just so thrilled! It's so cool to see Actors performance in this role. Director did the director stuff really well too. I can't wait for a sequel!"
+
+            };
+            var rev2 = new Review
+            {
+                Customer = c2,
+                Movie = m1,
+                Rating = 1,
+                Comment = "Meh... The shiny stuff wasn't as shiny as I would've hoped, and the lines were dumb. I particularly hated it when the actor went all 'Hurr durr I'm the protagonist I can do things!' That's just lazy writing."
+
+            };
+            var rev3 = new Review
+            {
+                Customer = c3,
+                Movie = m1,
+                Rating = 3,
+                Comment = "It's a movie. It is an OK movie. I liked it."
+
+            };
+            context.Reviews.AddOrUpdate(r => r.ID, rev1, rev2, rev3);
             //Seeds an administrator role if it doesn't already exist
             if (!context.Roles.Any(r => r.Name == "Administrator"))
             {
