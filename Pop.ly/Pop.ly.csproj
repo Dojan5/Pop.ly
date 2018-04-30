@@ -376,7 +376,6 @@
     <Content Include="Views\Shared\_MovieShowCasePartial.cshtml" />
     <Content Include="Views\Customer\EditOwnDetails.cshtml" />
     <Content Include="Views\Shared\_MovieDetailPartial.cshtml" />
-    <Content Include="Views\Movie\MovieDetails.cshtml" />
     <Content Include="Views\Shared\_MovieRibbonPartial.cshtml" />
     <Content Include="Views\Administration\Index.cshtml" />
     <Content Include="Views\Shared\_AdminNavPartial.cshtml" />

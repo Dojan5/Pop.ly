@@ -20,12 +20,5 @@ namespace Pop.ly.Controllers
             Movie = dbm.First();
             return View(Movie);
         }
-        public ActionResult MovieDetails()
-        {
-            var Movie = new Movie();
-            var dbm = db.Movies.Where(m => m.ID == 3).Select(m => m);
-            Movie = dbm.First();
-            return View(Movie);
-        }
     }
 }
