@@ -175,7 +175,7 @@ namespace Pop.ly.Migrations
                 manager.Create(role);
             }
             //Seeds an administrator account. Obviously this is a poor idea for an actual application
-            if (!context.Users.Any(u => u.UserName == "Administrator"))
+            if (!context.Users.Any(u => u.UserName == "admin@app.com"))
             {
                 var cust = new Customer { FirstName = "Admin", LastName = "I. Strator" };
                 var store = new UserStore<ApplicationUser>(context);
