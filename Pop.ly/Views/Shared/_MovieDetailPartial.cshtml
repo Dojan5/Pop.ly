@@ -1,7 +1,7 @@
 ﻿@model Pop.ly.Models.Database.Movie
 
 <div class="pt-5">
-    <div id="promo-background" style="background-image: url(@Model.PromoArt)">
+    <div id="promo-background" style="width: 100%; background-image: url(@Model.PromoArt); background-size: cover; background-repeat: no-repeat; background-position: center center;">
         <div id="movie-details" class="row">
             <div class="col-sm-3"><img id="DetailCover" src="@Model.CoverArt" /></div>
             <div class="col-sm-7">
@@ -16,9 +16,10 @@
                 </div>
             </div>
         </div>
-        <button data-toggle="collapse" data-target="#trailer"><i class="fas fa-video"></i> View Trailer</button>
     </div>
 </div>
+
+<button data-toggle="collapse" data-target="#trailer"><i class="fas fa-video"></i> View Trailer</button>
 
 <div id="trailer" class="collapse">
     <iframe class="pt-2" width="560" height="315" src="https://www.youtube.com/embed/@Model.TrailerURL" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
