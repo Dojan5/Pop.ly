@@ -165,7 +165,7 @@ namespace Pop.ly.Migrations
                 PromoArt = @"\Content\Images\Movies\TombRaider2018_promo.jpg",
                 TrailerURL = @"rOEHpkZCc1Y"
             };
-            context.Movies.AddOrUpdate(m => m.ID, m1, m2, m3, m4, m5, m6);
+            context.Movies.AddOrUpdate(m => m.ID, m1, m2, m3, m4, m5, m6, m7, m8);
             //Seeds an administrator role if it doesn't already exist
             if (!context.Roles.Any(r => r.Name == "Administrator"))
             {
