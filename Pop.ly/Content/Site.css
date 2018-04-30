@@ -27,6 +27,16 @@ textarea {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+.btn.btn-square {
+    border-radius: 0;
+}
+
+.btn.btn-square-top {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
 .carousel-item {
   background-color: lightcoral;
   max-height: 460px;
