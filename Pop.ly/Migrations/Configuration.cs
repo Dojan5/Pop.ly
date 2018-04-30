@@ -141,6 +141,30 @@ namespace Pop.ly.Migrations
                 PromoArt = @"\Content\Images\Movies\peterrabbit_promo.jpg",
                 TrailerURL = @"7Pa_Weidt08"
             };
+            var m7 = new Movie
+            {
+                Title = "The Greatest Showman",
+                ReleaseYear = 2017,
+                Director = "Michael Gracey",
+                Genre = "Romance, Drama, Musical",
+                Description = "Orphaned, penniless but ambitious and with a mind crammed with imagination and fresh ideas, the American Phineas Taylor Barnum will always be remembered as the man with the gift to effortlessly blur the line between reality and fiction. Thirsty for innovation and hungry for success, the son of a tailor will manage to open a wax museum but will soon shift focus to the unique and peculiar, introducing extraordinary, never-seen-before live acts on the circus stage. Some will call Barnum's wide collection of oddities, a freak show; however, when the obsessed showman gambles everything on the opera singer Jenny Lind to appeal to a high-brow audience, he will somehow lose sight of the most important aspect of his life: his family. Will Barnum risk it all to be accepted?",
+                Price = 22,
+                CoverArt = @"\Content\Images\Movies\TheGreatestShowman_cover.jpg",
+                PromoArt = @"\Content\Images\Movies\TheGreatestShowman_promo.jpg",
+                TrailerURL = @"AXCTMGYUg9A"
+            };
+            var m8 = new Movie
+            {
+                Title = "Tomb Raider",
+                ReleaseYear = 2018,
+                Director = "Roar Uthaug",
+                Genre = "Action, Adventure, Drama",
+                Description = "Lara Croft is the fiercely independent daughter of an eccentric adventurer who vanished when she was scarcely a teen. Now a young woman of 21 without any real focus or purpose, Lara navigates the chaotic streets of trendy East London as a bike courier, barely making the rent, and takes college courses, rarely making it to class. Determined to forge her own path, she refuses to take the reins of her father's global empire just as staunchly as she rejects the idea that he's truly gone.",
+                Price = 30,
+                CoverArt = @"\Content\Images\Movies\TombRaider2018_cover.jpg",
+                PromoArt = @"\Content\Images\Movies\TombRaider2018_promo.jpg",
+                TrailerURL = @"rOEHpkZCc1Y"
+            };
             context.Movies.AddOrUpdate(m => m.ID, m1, m2, m3, m4, m5, m6);
             //Seeds an administrator role if it doesn't already exist
             if (!context.Roles.Any(r => r.Name == "Administrator"))
