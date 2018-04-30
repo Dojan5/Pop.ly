@@ -58,6 +58,10 @@ textarea {
     width: 80%;
 }
 
+#MovieDetailsCoverSection button {
+    width: 100%;
+}
+
 #DetailCover {
     width: 100%;
 }

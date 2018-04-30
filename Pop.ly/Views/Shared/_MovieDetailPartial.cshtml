@@ -4,13 +4,16 @@
     <div id="movie-details" class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-sm-3"><img id="DetailCover" src="@Model.CoverArt" /></div>
+                <div id="MovieDetailsCoverSection" class="col-sm-3">
+                    <img id="DetailCover" src="@Model.CoverArt" />
+                    <button data-toggle="collapse" data-target="#trailer"><i class="fas fa-video"></i> View Trailer</button>
+                </div>
                 <div class="col-sm-7">
                     <div class="row">
                         <h4>@Model.Title</h4>
                     </div>
                     <div class="row pt-3">
-                        @Model.Genre | @Model.ReleaseYear
+                        @Model.Genre |&nbsp;<a href="#" class="badge badge-pill badge-secondary">@Model.ReleaseYear</a>
                     </div>
                     <div class="row pt-1">
                         @Model.Description
@@ -20,8 +23,6 @@
         </div>
     </div>
 </div>
-
-<button data-toggle="collapse" data-target="#trailer"><i class="fas fa-video"></i> View Trailer</button>
 
 <div id="trailer" class="collapse">
     <iframe class="pt-2" width="560" height="315" src="https://www.youtube.com/embed/@Model.TrailerURL" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
