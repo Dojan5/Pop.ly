@@ -95,3 +95,8 @@ textarea {
 .review-section {
     min-width: 100%;
 }
+
+#menu-searchbar {
+    border-radius: 8rem;
+    height:32px;
+}
