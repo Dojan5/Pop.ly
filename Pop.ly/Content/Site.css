@@ -130,10 +130,12 @@ textarea {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: #1C0025;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    box-shadow: 1px 4px 26px rgba(0, 0, 0, 1);
+
 }
 
 .sidenav a {
