@@ -27,5 +27,15 @@ namespace Pop.ly.Models
                 TotalCost += i.Movie.Price * i.Quantity;
             }
         }
+        public void CreateOrder()
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            Customer c = new Customer();
+            Order o = new Order();
+            OrderRow r = new OrderRow();
+            Movie m = new Movie();
+
+
+        }
     }
 }

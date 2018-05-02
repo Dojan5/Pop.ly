@@ -1,16 +1,4 @@
 ﻿$(document).ready(function () {
-    $(function () {
-        $('[rel="popover"]').popover({
-            container: 'body',
-            html: true,
-            content: function () {
-                var clone = $($(this).data('popover-content')).clone(true).removeClass('invisible');
-                return clone;
-            }
-        }).click(function (e) {
-            e.preventDefault();
-        });
-    });
 });
 
 function AddToCart(id) {
@@ -18,6 +6,10 @@ function AddToCart(id) {
         url: "/ShoppingCart/AddToCart/?movieID=" + id,
         type: "get"
     });
+    $('#AddToCart').removeClass("btn-secondary").addClass("btn-success").text("Added");
+    setTimeout(function() {
+        $('#AddToCart').removeClass("btn-success").addClass("btn-secondary").text("Add to cart");
+    },1500);
 }
 
 function RemoveFromCart(index) {
@@ -27,9 +19,8 @@ function RemoveFromCart(index) {
     });
     var ID = "#CartRow" + index;
     $(ID).remove();
-}
-    
-});
+  
+};
 
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
