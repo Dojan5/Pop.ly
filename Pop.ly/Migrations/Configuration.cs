@@ -192,6 +192,28 @@ namespace Pop.ly.Migrations
 
             };
             context.Reviews.AddOrUpdate(r => r.ID, rev1, rev2, rev3);
+            //Creates order
+            var order1 = new Order
+            {
+                Customer = c1
+            };
+            context.Orders.AddOrUpdate(or => or.ID, order1);
+            //Creates rows for orders
+            var or1r1 = new OrderRow
+            {
+                Movie = m1,
+                Order = order1,
+                Price = m1.Price,
+                Quantity = 1
+            };
+            var or1r2 = new OrderRow
+            {
+                Movie = m3,
+                Order = order1,
+                Price = m3.Price,
+                Quantity = 1
+            };
+            context.OrderRows.AddOrUpdate(row => row.ID, or1r1, or1r2);
             //Seeds an administrator role if it doesn't already exist
             if (!context.Roles.Any(r => r.Name == "Administrator"))
             {
