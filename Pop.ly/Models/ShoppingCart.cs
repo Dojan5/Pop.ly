@@ -15,7 +15,7 @@ namespace Pop.ly.Models
     public class ShoppingCart
     {
         public decimal TotalCost { get; set; }
-        public List<CartItem> Items { get; set; }
+        public List<CartItem> Items = new List<CartItem>();
 
 
         //Calculates the total cost of all items in the cart

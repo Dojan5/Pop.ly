@@ -1,6 +1,6 @@
 ﻿@model Pop.ly.Models.Database.Movie
 
-<div id="promo-background" style="width: 100%; background-image: url(@Model.PromoArt); background-size: cover; background-repeat: no-repeat; background-position: center center;">
+<div id="promo-background" style="width: 100%; background-image: url(@Model.PromoArt); background-size: cover; background-repeat: no-repeat; background-position: bottom right;">
     <div id="movie-details" class="py-5">
         <div class="container">
             <div class="row">
@@ -17,7 +17,8 @@
                     </div>
                     <div class="row pt-1">
                         @Model.Description
-                        <button type="button" class="btn btn-secondary"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <button id="AddToCart" type="button" class="btn btn-secondary" onclick="AddToCart(@Model.ID)"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        
                     </div>
                 </div>
             </div>
