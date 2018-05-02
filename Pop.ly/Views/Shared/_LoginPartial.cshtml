@@ -1,8 +1,9 @@
 ﻿@using Microsoft.AspNet.Identity
+@using Pop.ly.Models;
 
 <ul class="navbar-nav ml-auto">
     <li class="nav-item dropdown">
-        <a class="nav-link"><i class="fas fa-shopping-cart"></i> Cart</a>
+        <a id="CartMenuItem" class="nav-link" href="/ShoppingCart/"><i class="fas fa-shopping-cart"></i> Cart</a>
     </li>
     @if (Request.IsAuthenticated)
     {

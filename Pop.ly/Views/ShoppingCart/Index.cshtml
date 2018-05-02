@@ -1,51 +1,30 @@
-﻿
+﻿@model Pop.ly.Models.ShoppingCart
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Cart";
 }
-
-<h2>Your cart</h2>
-
-<div class="container">
-    <table class="table">
+<div class="container pt-4">
+    <table class="table table-dark">
         <thead>
             <tr>
-                <th scope="col">Movie</th>
+                <th scope="col"></th>
+                <th scope="col">Title</th>
                 <th scope="col">Quantity</th>
                 <th scope="col">Price</th>
-                <th scope="col">Controls</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td><a href="/Movie/?T=Interstellar&Y=2014">MOVIE 1</a></td>
-                <td>MANY</td>
-                <td>EXPENSIVE</td>
-                <td>DELETE</td>
-            </tr>
-            <tr>
-                <td>MOVIE 1</td>
-                <td>MANY</td>
-                <td>EXPENSIVE</td>
-                <td>DELETE</td>
-            </tr>
-            <tr>
-                <td>MOVIE 1</td>
-                <td>MANY</td>
-                <td>EXPENSIVE</td>
-                <td>DELETE</td>
-            </tr>
-            <tr>
-                <td>MOVIE 1</td>
-                <td>MANY</td>
-                <td>EXPENSIVE</td>
-                <td>DELETE</td>
-            </tr>
-            <tr>
-                <td>MOVIE 1</td>
-                <td>MANY</td>
-                <td>EXPENSIVE</td>
-                <td>DELETE</td>
-            </tr>
+            @foreach (var item in Model.Items)
+            {
+                var indx = "CartRow" + @Model.Items.IndexOf(item).ToString();
+                <tr id=@indx>
+                    <td><img src=@item.Movie.CoverArt style="max-height: 240px;" class="img-responsive"/></td>
+                    <td><a href="/Movie/?T=@item.Movie.Title&Y=@item.Movie.ReleaseYear">@item.Movie.Title</a></td>
+                    <td>@item.Quantity</td>
+                    <td>COST</td>
+                    <td><button id="AddToCart" type="button" style="border-radius:48px;" class="btn btn-danger" onclick="RemoveFromCart(@Model.Items.IndexOf(item))"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                </tr>
+            }
         </tbody>
     </table>
 </div>
