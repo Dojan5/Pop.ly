@@ -1,0 +1,27 @@
+﻿@model Pop.ly.Models.BrowseModel
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container pt-4">
+    <div class="row">
+        <div id="browserfilter" class="col-3 mt-2">
+            <div id="mySidebar" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="About"></a>
+                <a href="Movies"></a>
+                <a href="Recently Added"></a>
+                <a href="Contact Us"></a>
+
+                <div id="main">
+                     <span style="font-size:30; cursor:pointer" onclick="openNav()">&#9776; open</span>
+                </div>
+
+                ...
+            </div>
+        </div>
+        <div class="col">
+
+            @Html.Partial("_MovieGridPartial", @Model.movies)
+        </div>
+    </div>
+</div>
