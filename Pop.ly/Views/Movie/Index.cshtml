@@ -1,6 +1,7 @@
-﻿@model Pop.ly.Models.Database.Movie
+﻿@model Pop.ly.Models.Database.MovieIndexViewController
 @{
     ViewBag.Title = "MovieDetails";
 }
 
-    @Html.Partial("_MovieDetailPartial")
+@Html.Partial("_MovieDetailPartial", @Model.Movie)
+@Html.Partial("_CustomerReviewsPartial", @Model.Reviews)

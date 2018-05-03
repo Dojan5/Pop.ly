@@ -165,7 +165,94 @@ namespace Pop.ly.Migrations
                 PromoArt = @"/Content/Images/Movies/TombRaider2018_promo.jpg",
                 TrailerURL = @"rOEHpkZCc1Y"
             };
-            context.Movies.AddOrUpdate(m => m.ID, m1, m2, m3, m4, m5, m6, m7, m8);
+             var m9 = new Movie
+            {
+                Title = "Game Night",
+                ReleaseYear = 2018,
+                Director = "John Francis Daley",
+                Genre = "Comedy",
+                Description ="Max and his wife, Annie, and their friends get together for 'Game Night' on a regular basis. His brother, Brooks, who's hosting the event this time, informs them that they're having a murder mystery party. Someone in the room will be kidnapped during the party. The other players must do everything they can to find him to win the grand prize. Brooks warns them that they won't know what is real or fake. When the door breaks open suddenly and Brooks is kidnapped, Max and the other players believe that it's merely the start of the mystery. What happens next proves that a real kidnapping can cause a lot of hilarious and even deadly confusion when everyone thinks it's just a game." ,
+                Price = 25,
+                CoverArt = @"/Content/Images/Movies/gamenight_cover.jpg",
+                PromoArt = @"/Content/Images/Movies/gamenight_promo.jpg",
+                TrailerURL = @"qmxMAdV6s4U"
+            };
+            var m10 = new Movie
+            {
+                Title = "Ready Player One",
+                ReleaseYear = 2018,
+                Director = "Steven Spielberg",
+                Genre = "Action, Adventure, Sci-Fi",
+                Description = "In the year 2045, the real world is a harsh place. The only time Wade Watts (Tye Sheridan) truly feels alive is when he escapes to the OASIS, an immersive virtual universe where most of humanity spends their days. In the OASIS, you can go anywhere, do anything, be anyone-the only limits are your own imagination. The OASIS was created by the brilliant and eccentric James Halliday (Mark Rylance), who left his immense fortune and total control of the Oasis to the winner of a three-part contest he designed to find a worthy heir. When Wade conquers the first challenge of the reality-bending treasure hunt, he and his friends-aka the High Five-are hurled into a fantastical universe of discovery and danger to save the OASIS.",
+                Price = 30,
+                CoverArt = @"/Content/Images/Movies/readyplayerone_cover.jpg",
+                PromoArt = @"/Content/Images/Movies/readyplayerone_promo.jpg",
+                TrailerURL = @"cSp1dM2Vj48"
+            };
+            var m11 = new Movie
+            {
+                Title = "Ready Player One",
+                ReleaseYear = 2018,
+                Director = "Steven Spielberg",
+                Genre = "Action, Adventure, Sci-Fi",
+                Description = "In the year 2045, the real world is a harsh place. The only time Wade Watts (Tye Sheridan) truly feels alive is when he escapes to the OASIS, an immersive virtual universe where most of humanity spends their days. In the OASIS, you can go anywhere, do anything, be anyone-the only limits are your own imagination. The OASIS was created by the brilliant and eccentric James Halliday (Mark Rylance), who left his immense fortune and total control of the Oasis to the winner of a three-part contest he designed to find a worthy heir. When Wade conquers the first challenge of the reality-bending treasure hunt, he and his friends-aka the High Five-are hurled into a fantastical universe of discovery and danger to save the OASIS.",
+                Price = 30,
+                CoverArt = @"/Content/Images/Movies/readyplayerone_cover.jpg",
+                PromoArt = @"/Content/Images/Movies/readyplayerone_promo.jpg",
+                TrailerURL = @"cSp1dM2Vj48"
+            };
+            
+
+
+            context.Movies.AddOrUpdate(m => m.ID, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10);
+            //Seeds reviews for Interstellar
+            var rev1 = new Review
+            {
+                Customer = c1,
+                Movie = m1,
+                Rating = 5,
+                Comment = "This movie is totally awesome. It completely changed my life. Spoiler warning: when the thing happened I was just so thrilled! It's so cool to see Actors performance in this role. Director did the director stuff really well too. I can't wait for a sequel!"
+
+            };
+            var rev2 = new Review
+            {
+                Customer = c2,
+                Movie = m1,
+                Rating = 1,
+                Comment = "Meh... The shiny stuff wasn't as shiny as I would've hoped, and the lines were dumb. I particularly hated it when the actor went all 'Hurr durr I'm the protagonist I can do things!' That's just lazy writing."
+
+            };
+            var rev3 = new Review
+            {
+                Customer = c3,
+                Movie = m1,
+                Rating = 3,
+                Comment = "It's a movie. It is an OK movie. I liked it."
+
+            };
+            context.Reviews.AddOrUpdate(r => r.ID, rev1, rev2, rev3);
+            //Creates order
+            var order1 = new Order
+            {
+                Customer = c1
+            };
+            context.Orders.AddOrUpdate(or => or.ID, order1);
+            //Creates rows for orders
+            var or1r1 = new OrderRow
+            {
+                Movie = m1,
+                Order = order1,
+                Price = m1.Price,
+                Quantity = 1
+            };
+            var or1r2 = new OrderRow
+            {
+                Movie = m3,
+                Order = order1,
+                Price = m3.Price,
+                Quantity = 1
+            };
+            context.OrderRows.AddOrUpdate(row => row.ID, or1r1, or1r2);
             //Seeds an administrator role if it doesn't already exist
             if (!context.Roles.Any(r => r.Name == "Administrator"))
             {

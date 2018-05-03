@@ -1,6 +1,6 @@
 ﻿@model Pop.ly.Models.Database.Movie
 
-<div id="promo-background" style="width: 100%; background-image: url(@Model.PromoArt); background-size: cover; background-repeat: no-repeat; background-position: center center;">
+<div id="promo-background" style="width: 100%; background-image: url(@Model.PromoArt); background-size: cover; background-repeat: no-repeat; background-position: bottom right;">
     <div id="movie-details" class="py-5">
         <div class="container">
             <div class="row">
@@ -17,20 +17,18 @@
                     </div>
                     <div class="row pt-1">
                         @Model.Description
+                        <button id="AddToCart" type="button" class="btn btn-secondary" onclick="AddToCart(@Model.ID)"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <div id="trailer" class="collapse">
-    <iframe class="pt-2" width="560" height="315" src="https://www.youtube.com/embed/@Model.TrailerURL" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <iframe class="pt-2" width="1280" height="720" src="https://www.youtube.com/embed/@Model.TrailerURL" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
-
-<hr />
-
-<dl class="dl-horizontal">
+@*<dl class="dl-horizontal">
     <dt>
         @Html.DisplayNameFor(model => model.Title)
     </dt>
@@ -112,10 +110,4 @@
         @Html.DisplayFor(model => model.TrailerURL)
     </dd>
 
-</dl>
-</div>
-
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+</dl>*@

@@ -15,10 +15,18 @@ namespace Pop.ly.Controllers
         // GET: Movie
         public ActionResult Index(string T, int Y)
         {
-            var Movie = new Movie();
-            var dbm = db.Movies.Where(m => m.Title == T && m.ReleaseYear == Y).Select(m => m);
-            Movie = dbm.First();
-            return View(Movie);
+            //Creates an object out of the view model, you can find it in Models/Database/Movies
+            MovieIndexViewController model = new MovieIndexViewController();
+            //Fetches a movie object from database
+            Movie movieObject = db.Movies.Where(m => m.Title == T && m.ReleaseYear == Y).Select(m => m).First();
+            //Fetches list of reviews from database
+            var movieReviews = db.Reviews.Where(r => r.MovieID == movieObject.ID).Select(r => r).ToList();
+            //Adds the movie object into the view model object
+            model.Movie = movieObject;
+            //Adds the list of reviews into the view model object
+            model.Reviews = movieReviews;
+            //Passes the view model object into the view
+            return View(model);
         }
        
     }

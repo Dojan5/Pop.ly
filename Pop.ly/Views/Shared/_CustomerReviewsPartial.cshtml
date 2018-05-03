@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Pop.ly.Models.Database.Review>
+
+<section class="row row-eq-height px-4 py-4 review-section">
+        @foreach (var r in Model)
+        {
+            <div class="col-sm-12 col-md-5 col-lg-3 mx-1 p-0 col-xl-2 card">
+                <div class="card-header">
+                    <p class="align-middle">@r.Rating</p>
+                </div>
+                <div class="card-body align-middle">
+                    <p>@r.Comment</p>
+                </div>
+                <div class="card-footer text-muted align-middle text-right">
+                    <h4>@r.Customer.FirstName</h4>
+                </div>
+            </div>
+        }
+</section>

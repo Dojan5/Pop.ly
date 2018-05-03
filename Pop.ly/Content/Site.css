@@ -1,6 +1,10 @@
 ﻿body {
     padding-bottom: 20px;
     height: 100%;
+    background: linear-gradient(to bottom, #000323 0%,#000000 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -27,6 +31,13 @@ textarea {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+.top-menu {
+    background-color: purple;
+    background: linear-gradient(to bottom, #1C0025 ,#28193D  );
+    border-bottom: 2px solid;
+    border-color: goldenrod;
+}
+
 .btn.btn-square {
     border-radius: 0;
 }
@@ -37,7 +48,7 @@ textarea {
 }
 
 
-.carousel-item {
+.carousel-item  {
   background-color: lightcoral;
   max-height: 460px;
 }
@@ -48,6 +59,9 @@ textarea {
     object-fit: contain;
     object-position: center;
 }
+
+
+
 
 .carousel-caption {
     text-shadow: 2px 2px 12px #111111, 2px 2px 24px #999999;
@@ -89,5 +103,68 @@ textarea {
 
 #movie-details {
     /* Handles the gradient over the promo art on the movie details */
-    background: radial-gradient(farthest-corner at 40px 40px, rgba(255,255,255,1) 50%,rgba(255,255,255,0.8) 75%,rgba(255,255,255,0) 100%);
+    background: radial-gradient(farthest-corner at 40px 40px, rgba(35,6,43,1) 50%,rgba(35,6,43,0.8) 75%,rgba(255,255,255,0) 100%);
+}
+
+.review-section {
+    min-width: 100%;
+}
+
+#menu-searchbar {
+    border-radius: 8rem;
+    height:32px;
+}
+
+#browsermovieobj {
+    background-color: aquamarine;
+}
+
+#browsermovieobj img {
+    max-height: 230px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #1C0025;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 1px 4px 26px rgba(0, 0, 0, 1);
+
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }

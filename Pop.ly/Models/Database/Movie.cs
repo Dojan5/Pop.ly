@@ -26,4 +26,9 @@ namespace Pop.ly.Models.Database
         public string PromoArt { get; set; }
         public string TrailerURL { get; set; }
     }
+    public class MovieIndexViewController
+    {
+        public Movie Movie { get; set; }
+        public List<Review> Reviews { get; set; }
+    }
 }
