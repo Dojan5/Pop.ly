@@ -23,46 +23,46 @@ namespace Pop.ly.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
-            var c1 = new Customer
-            {
-                FirstName = "Hannah",
-                LastName = "Handlebars",
-                BillingAddress = "23 Floof Rd.",
-                BillingZip = "64477",
-                BillingCity = "Fluffington",
-                DeliveryAddress = "23 Floof Rd.",
-                DeliveryZip = "64477",
-                DeliveryCity = "Fluffington",
-                EmailAddress = "hannah_rockz@hotmail.com",
-                PhoneNumber = "0722267435"
-            };
-            var c2 = new Customer
-            {
-                FirstName = "Ronald",
-                LastName = "Racuous",
-                BillingAddress = "23 Floof Rd.",
-                BillingZip = "64477",
-                BillingCity = "Fluffington",
-                DeliveryAddress = "23 Floof Rd.",
-                DeliveryZip = "64477",
-                DeliveryCity = "Fluffington",
-                EmailAddress = "rockin_ronald@soawesome.me",
-                PhoneNumber = "0762458731"
-            };
-            var c3 = new Customer
-            {
-                FirstName = "Pia",
-                LastName = "Pajama",
-                BillingAddress = "18 Bunnyhop Ln.",
-                BillingZip = "64458",
-                BillingCity = "Fluffington",
-                DeliveryAddress = "18 Bunnyhop Ln.",
-                DeliveryZip = "64458",
-                DeliveryCity = "Fluffington",
-                EmailAddress = "pia_loves_bunnies@floof.com.au",
-                PhoneNumber = "0708742354"
-            };
-            context.Customers.AddOrUpdate(c => c.ID, c1, c2, c3);
+            //var c1 = new Customer
+            //{
+            //    FirstName = "Hannah",
+            //    LastName = "Handlebars",
+            //    BillingAddress = "23 Floof Rd.",
+            //    BillingZip = "64477",
+            //    BillingCity = "Fluffington",
+            //    DeliveryAddress = "23 Floof Rd.",
+            //    DeliveryZip = "64477",
+            //    DeliveryCity = "Fluffington",
+            //    EmailAddress = "hannah_rockz@hotmail.com",
+            //    PhoneNumber = "0722267435"
+            //};
+            //var c2 = new Customer
+            //{
+            //    FirstName = "Ronald",
+            //    LastName = "Racuous",
+            //    BillingAddress = "23 Floof Rd.",
+            //    BillingZip = "64477",
+            //    BillingCity = "Fluffington",
+            //    DeliveryAddress = "23 Floof Rd.",
+            //    DeliveryZip = "64477",
+            //    DeliveryCity = "Fluffington",
+            //    EmailAddress = "rockin_ronald@soawesome.me",
+            //    PhoneNumber = "0762458731"
+            //};
+            //var c3 = new Customer
+            //{
+            //    FirstName = "Pia",
+            //    LastName = "Pajama",
+            //    BillingAddress = "18 Bunnyhop Ln.",
+            //    BillingZip = "64458",
+            //    BillingCity = "Fluffington",
+            //    DeliveryAddress = "18 Bunnyhop Ln.",
+            //    DeliveryZip = "64458",
+            //    DeliveryCity = "Fluffington",
+            //    EmailAddress = "pia_loves_bunnies@floof.com.au",
+            //    PhoneNumber = "0708742354"
+            //};
+            //context.Customers.AddOrUpdate(c => c.ID, c1, c2, c3);
 
             var m1 = new Movie
             {
@@ -206,53 +206,55 @@ namespace Pop.ly.Migrations
 
             context.Movies.AddOrUpdate(m => m.ID, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10);
             //Seeds reviews for Interstellar
-            var rev1 = new Review
-            {
-                Customer = c1,
-                Movie = m1,
-                Rating = 5,
-                Comment = "This movie is totally awesome. It completely changed my life. Spoiler warning: when the thing happened I was just so thrilled! It's so cool to see Actors performance in this role. Director did the director stuff really well too. I can't wait for a sequel!"
+            //var rev1 = new Review
+            //{
+            //    Customer = c1,
+            //    Movie = m1,
+            //    Rating = 5,
+            //    Comment = "This movie is totally awesome. It completely changed my life. Spoiler warning: when the thing happened I was just so thrilled! It's so cool to see Actors performance in this role. Director did the director stuff really well too. I can't wait for a sequel!"
 
-            };
-            var rev2 = new Review
-            {
-                Customer = c2,
-                Movie = m1,
-                Rating = 1,
-                Comment = "Meh... The shiny stuff wasn't as shiny as I would've hoped, and the lines were dumb. I particularly hated it when the actor went all 'Hurr durr I'm the protagonist I can do things!' That's just lazy writing."
+            //};
+            //var rev2 = new Review
+            //{
+            //    Customer = c2,
+            //    Movie = m1,
+            //    Rating = 1,
+            //    Comment = "Meh... The shiny stuff wasn't as shiny as I would've hoped, and the lines were dumb. I particularly hated it when the actor went all 'Hurr durr I'm the protagonist I can do things!' That's just lazy writing."
 
-            };
-            var rev3 = new Review
-            {
-                Customer = c3,
-                Movie = m1,
-                Rating = 3,
-                Comment = "It's a movie. It is an OK movie. I liked it."
+            //};
+            //var rev3 = new Review
+            //{
+            //    Customer = c3,
+            //    Movie = m1,
+            //    Rating = 3,
+            //    Comment = "It's a movie. It is an OK movie. I liked it."
 
-            };
-            context.Reviews.AddOrUpdate(r => r.ID, rev1, rev2, rev3);
+            //};
+            //context.Reviews.AddOrUpdate(r => r.ID, rev1, rev2, rev3);
             //Creates order
-            var order1 = new Order
-            {
-                Customer = c1
-            };
-            context.Orders.AddOrUpdate(or => or.ID, order1);
-            //Creates rows for orders
-            var or1r1 = new OrderRow
-            {
-                Movie = m1,
-                Order = order1,
-                Price = m1.Price,
-                Quantity = 1
-            };
-            var or1r2 = new OrderRow
-            {
-                Movie = m3,
-                Order = order1,
-                Price = m3.Price,
-                Quantity = 1
-            };
-            context.OrderRows.AddOrUpdate(row => row.ID, or1r1, or1r2);
+            //var order1 = new Order
+            //{
+            //    Customer = c1,
+            //    OrderDate = DateTime.Now
+            //};
+            //context.Orders.AddOrUpdate(or => or.ID, order1);
+            ////Creates rows for orders
+            //var or1r1 = new OrderRow
+            //{
+            //    Movie = m1,
+            //    Order = order1,
+            //    Price = m1.Price,
+            //    Quantity = 1
+            //};
+            //var or1r2 = new OrderRow
+            //{
+            //    Movie = m3,
+            //    Order = order1,
+            //    Price = m3.Price,
+            //    Quantity = 1
+            //};
+            //context.OrderRows.AddOrUpdate(row => row.ID, or1r1, or1r2);
+            
             //Seeds an administrator role if it doesn't already exist
             if (!context.Roles.Any(r => r.Name == "Administrator"))
             {
@@ -264,14 +266,17 @@ namespace Pop.ly.Migrations
             //Seeds an administrator account. Obviously this is a poor idea for an actual application
             if (!context.Users.Any(u => u.UserName == "admin@app.com"))
             {
-                var cust = new Customer { FirstName = "Admin", LastName = "I. Strator" };
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
-                var user = new ApplicationUser { UserName = "admin@app.com", Email="admin@app.com", Customer = cust  };
+                var AdminUser = new ApplicationUser {
+                    FirstName = "Admin",
+                    LastName = "I. Strator",
+                    UserName = "admin@app.com",
+                    Email ="admin@app.com", };
                 
 
-                manager.Create(user, "P@ssword1");
-                manager.AddToRole(user.Id, "Administrator");
+                manager.Create(AdminUser, "P@ssword1");
+                manager.AddToRole(AdminUser.Id, "Administrator");
             }
         }
     }

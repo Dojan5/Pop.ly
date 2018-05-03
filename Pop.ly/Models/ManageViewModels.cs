@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
+using Pop.ly.Models.Database;
 
 namespace Pop.ly.Models
 {
@@ -15,6 +16,7 @@ namespace Pop.ly.Models
         public bool BrowserRemembered { get; set; }
         public ApplicationUser User { get; set; }
         public virtual ChangePasswordViewModel ChangePasswordViewModel { get; set; }
+        public List<Order> Orders { get; set; }
     }
 
     public class AccountSettingsViewModel

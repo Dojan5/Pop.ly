@@ -8,8 +8,16 @@ namespace Pop.ly.Models.Database
     public class Order
     {
         public int ID { get; set; }
-        public int CustomerID { get; set; }
+        public int UserID { get; set; }
+        public DateTime OrderDate { get; set; }
 
-        public virtual Customer Customer { get; set; }
+        public virtual ApplicationUser User { get; set; }
+        public virtual ICollection<OrderRow> OrderRows { get; set; }
+    }
+
+    public class OrderViewModel
+    {
+        public List<Order> Orders { get; set; }
+        public List<OrderRow> OrderRows { get; set; }
     }
 }

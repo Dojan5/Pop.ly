@@ -1,6 +1,7 @@
 ﻿$(document).ready(function () {
 });
 
+//Ajax function handling adding new items to the cart
 function AddToCart(id) {
     $.ajax({
         url: "/ShoppingCart/AddToCart/?movieID=" + id,
@@ -12,6 +13,7 @@ function AddToCart(id) {
     },1500);
 }
 
+//Ajax function handling removing items from the cart
 function RemoveFromCart(index) {
     $.ajax({
         url: "/ShoppingCart/RemoveFromCart/?index=" + index,
@@ -22,16 +24,7 @@ function RemoveFromCart(index) {
   
 };
 
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
-}
-
+//Toggles the filter pane on the movie browse page
 function toggleNav() {
     if (document.getElementById("toggleSideNav").value == "O")
     {

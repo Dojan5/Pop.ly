@@ -4,13 +4,38 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Pop.ly.Models.Database;
+using System.ComponentModel.DataAnnotations;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Pop.ly.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-        public virtual Customer Customer { get; set; }
+        [Display(Name = "First Name"), Required]
+        public string FirstName { get; set; }
+        [Display(Name = "Last Name"), Required]
+        public string LastName { get; set; }
+        [Display(Name = "Billing Address")]
+        public string BillingAddress { get; set; }
+        [Display(Name = "Billing Zip")]
+        public string BillingZip { get; set; }
+        [Display(Name = "Billing City")]
+        public string BillingCity { get; set; }
+        [Display(Name = "Delivery Address")]
+        public string DeliveryAddress { get; set; }
+        [Display(Name = "Delivery Zip")]
+        public string DeliveryZip { get; set; }
+        [Display(Name = "Delivery City")]
+        public string DeliveryCity { get; set; }
+        [Display(Name = "Email Address")]
+        public string EmailAddress { get; set; }
+        [Display(Name = "Phone Number")]
+        public override string PhoneNumber { get; set; }
+
+        public virtual ICollection<Order> Orders { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -27,7 +52,6 @@ namespace Pop.ly.Models
         {
         }
 
-        public DbSet<Customer> Customers { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderRow> OrderRows { get; set; }

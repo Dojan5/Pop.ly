@@ -7,6 +7,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Pop.ly.Models;
+using Pop.ly.Models.Database;
+using System.Collections.Generic;
 
 namespace Pop.ly.Controllers
 {
@@ -67,7 +69,6 @@ namespace Pop.ly.Controllers
 
             var userId = User.Identity.GetUserId();
             var user = db.Users.Find(userId);
-
             var model = new ManageAccountViewModel
             {
                 HasPassword = HasPassword(),
@@ -76,8 +77,12 @@ namespace Pop.ly.Controllers
                 Logins = await UserManager.GetLoginsAsync(userId),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
                 User = user,
-                ChangePasswordViewModel = new ChangePasswordViewModel()
+                ChangePasswordViewModel = new ChangePasswordViewModel(),
+                Orders = user.Orders.ToList()
+
             };
+
+            model.User = user;
             return View(model);
         }
 

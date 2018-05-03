@@ -22,9 +22,10 @@
                     <td><a href="/Movie/?T=@item.Movie.Title&Y=@item.Movie.ReleaseYear">@item.Movie.Title</a></td>
                     <td>@item.Quantity</td>
                     <td>COST</td>
-                    <td><button id="AddToCart" type="button" style="border-radius:48px;" class="btn btn-danger" onclick="RemoveFromCart(@Model.Items.IndexOf(item))"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                    <td><button id="RemoveFromCart" type="button" style="border-radius:48px;" class="btn btn-danger" onclick="RemoveFromCart(@Model.Items.IndexOf(item))"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
                 </tr>
             }
         </tbody>
     </table>
+    <a href="/ShoppingCart/PlaceOrder" id="PlaceOrder" type="button" class="btn btn-success">Order WORK IN PROGRESS</a>
 </div>

@@ -10,6 +10,7 @@ namespace Pop.ly.Models
     {
         public int Quantity { get; set; }
         public Movie Movie { get; set; }
+        public decimal CostPerItem { get; set; }
     }
 
     public class ShoppingCart
@@ -27,15 +28,32 @@ namespace Pop.ly.Models
                 TotalCost += i.Movie.Price * i.Quantity;
             }
         }
-        public void CreateOrder()
+        //Method takes a cart and a customer and creates an order, as well as appropriate rows out of it.
+        public static void CreateOrder(string UserID, ShoppingCart Cart)
         {
             ApplicationDbContext db = new ApplicationDbContext();
-            Customer c = new Customer();
-            Order o = new Order();
-            OrderRow r = new OrderRow();
-            Movie m = new Movie();
+            Order NewOrder = new Order
+            {
+
+                User = db.Users.Find(UserID),
+                OrderDate = DateTime.Now
+            };
+            NewOrder.OrderRows = new List<OrderRow>();
+            foreach (var item in Cart.Items)
+            {
+                OrderRow row = new OrderRow
+                {
+                    
+                    Movie = item.Movie,
+                    Price = item.CostPerItem * item.Quantity,
+                    Quantity = item.Quantity
+                };
+                NewOrder.OrderRows.Add(row);
+            }
 
 
+            db.Orders.Add(NewOrder);
+            db.SaveChanges();
         }
     }
 }
