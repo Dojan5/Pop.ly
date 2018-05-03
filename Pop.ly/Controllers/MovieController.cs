@@ -20,5 +20,6 @@ namespace Pop.ly.Controllers
             Movie = dbm.First();
             return View(Movie);
         }
+       
     }
 }
