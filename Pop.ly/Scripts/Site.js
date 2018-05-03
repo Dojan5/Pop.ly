@@ -7,9 +7,9 @@ function AddToCart(id) {
         url: "/ShoppingCart/AddToCart/?movieID=" + id,
         type: "get"
     });
-    $('#AddToCart').removeClass("btn-secondary").addClass("btn-success").text("Added");
+    $('#AddToCart').removeClass("btn-secondary").addClass("btn-success").html("<i class=\"fas fa-check\"></i> Added");
     setTimeout(function() {
-        $('#AddToCart').removeClass("btn-success").addClass("btn-secondary").text("Add to cart");
+        $('#AddToCart').removeClass("btn-success").addClass("btn-secondary").html("<i class=\"fas fa-shopping-cart\"></i> Add to cart");
     },1500);
 }
 
