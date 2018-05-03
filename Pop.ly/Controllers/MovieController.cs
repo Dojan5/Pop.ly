@@ -28,5 +28,6 @@ namespace Pop.ly.Controllers
             //Passes the view model object into the view
             return View(model);
         }
+       
     }
 }
