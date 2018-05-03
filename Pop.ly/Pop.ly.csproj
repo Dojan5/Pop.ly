@@ -407,10 +407,10 @@
     <Content Include="Views\Administration\ViewOrders.cshtml" />
     <Content Include="Views\Shared\_OrderDetailPartial.cshtml" />
     <Content Include="Views\Order\Details.cshtml" />
+    <Content Include="Views\Browse\SortByGenre.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Browse\" />
     <Folder Include="Views\Errors\" />
     <Folder Include="Views\Orders\" />
   </ItemGroup>
