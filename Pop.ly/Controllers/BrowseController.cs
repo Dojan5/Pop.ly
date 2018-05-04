@@ -29,7 +29,7 @@ namespace Pop.ly.Controllers
         }
         public ActionResult SortByGenre(string Genre)
         {
-            var model = db.Movies.Where(g => g.Genre == Genre).Select(g => g);
+            var model = db.Movies.Where(g => g.Genre.Contains(Genre)).Select(g => g);
 
             return View(model);
         }
