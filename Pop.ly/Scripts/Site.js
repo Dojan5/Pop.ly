@@ -2,12 +2,36 @@
     $('#TrailerOverlay').on('shown.bs.modal', function () {
         $('#TrailerToggle').trigger('focus')
     });
+    //Movie ribbon controllers
     $('.MovieRibbonLeftControl').mouseover(function () {
-        $(this).siblings('.MovieRibbonContent').animate({ right: "300px" })
+        $(this).siblings('.MovieRibbonContent').animate({ scrollLeft: -1000 }, 400);
     });
     $('.MovieRibbonRightControl').mouseover(function () {
-        $(this).siblings('.MovieRibbonContent').animate({left: "300px"})
+        $(this).siblings('.MovieRibbonContent').animate({ scrollLeft: 1000 }, 400);
     });
+    //Owl Carousel
+    $(".owl-carousel").owlCarousel({
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 4
+            },
+            600: {
+                items: 6
+            },
+            900: {items: 9
+            },
+            1080: {
+                items: 7
+            }
+        },
+        margin: 10,
+        center: true,
+        loop: true,
+        nav: true,
+        navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+    });
+    
 });
 
 //Ajax function handling adding new items to the cart
