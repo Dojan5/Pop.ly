@@ -6,108 +6,40 @@
             <div class="row">
                 <div id="MovieDetailsCoverSection" class="col-sm-3">
                     <img id="DetailCover" src="@Model.CoverArt" />
-                    <button data-toggle="collapse" data-target="#trailer" type="button" class="btn btn-square-top btn-secondary"><i class="fas fa-video"></i> View Trailer</button>
+                    <button id="TrailerToggle" data-toggle="modal" data-target="#TrailerOverlay" type="button" class="btn btn-square-top btn-secondary"><i class="fas fa-video"></i> View Trailer</button>
                 </div>
                 <div class="col-sm-7">
                     <div class="row">
-                        <h4>@Model.Title</h4>
+                        <h2 id="DetailsMovieTitle">@Model.Title</h2>
                     </div>
-                    <div class="row pt-3">
-                        @Model.Genre |&nbsp;<a href="#" class="badge badge-pill badge-secondary">@Model.ReleaseYear</a>
+                    <div class="row pt-1">
+                        <p class="justify p-0 m-0">
+                            @Model.Genre |&nbsp;<a href="#" class="badge badge-pill badge-golden">@Model.ReleaseYear</a>
+                        </p>
                     </div>
                     <div class="row pt-1">
                         @Model.Description
+                    </div>
+                    <div class="row pt-1">
+                        Directed by: @Model.Director
+                    </div>
+                    <div class="row pt-1">
                         <button id="AddToCart" type="button" class="btn btn-secondary" onclick="AddToCart(@Model.ID)"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div id="trailer" class="collapse">
-    <iframe class="pt-2" width="1280" height="720" src="https://www.youtube.com/embed/@Model.TrailerURL" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+<!-- Modal overlay for the trailer -->
+<div class="modal fade" id="TrailerOverlay" tabindex="-1" role="dialog" aria-labelledby="ModalTrailerOverlay" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div id="TrailerDialog" class="modal-content">
+            <div class="modal-body">
+                <iframe id="TrailerVideo" class="pt-2" src="https://www.youtube.com/embed/@Model.TrailerURL" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
 </div>
-@*<dl class="dl-horizontal">
-    <dt>
-        @Html.DisplayNameFor(model => model.Title)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.Title)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.ReleaseYear)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.ReleaseYear)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.Director)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.Director)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.Genre)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.Genre)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.Description)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.Description)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.Rating)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.Rating)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.Price)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.Price)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.CoverArt)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.CoverArt)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.PromoArt)
-    </dt>
-
-    <dd>
-        <img src="@Model.PromoArt" />
-        @Html.DisplayFor(model => model.PromoArt)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.TrailerURL)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.TrailerURL)
-    </dd>
-
-</dl>*@
