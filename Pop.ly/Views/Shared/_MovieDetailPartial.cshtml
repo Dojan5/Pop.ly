@@ -10,15 +10,21 @@
                 </div>
                 <div class="col-sm-7">
                     <div class="row">
-                        <h4>@Model.Title</h4>
+                        <h2 id="DetailsMovieTitle">@Model.Title</h2>
                     </div>
-                    <div class="row pt-3">
-                        @Model.Genre |&nbsp;<a href="#" class="badge badge-pill badge-secondary">@Model.ReleaseYear</a>
+                    <div class="row pt-1">
+                        <p class="justify p-0 m-0">
+                            @Model.Genre |&nbsp;<a href="#" class="badge badge-pill badge-golden">@Model.ReleaseYear</a>
+                        </p>
                     </div>
                     <div class="row pt-1">
                         @Model.Description
+                    </div>
+                    <div class="row pt-1">
+                        Directed by: @Model.Director
+                    </div>
+                    <div class="row pt-1">
                         <button id="AddToCart" type="button" class="btn btn-secondary" onclick="AddToCart(@Model.ID)"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-                        
                     </div>
                 </div>
             </div>
