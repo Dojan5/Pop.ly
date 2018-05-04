@@ -23,46 +23,85 @@ namespace Pop.ly.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
-            //var c1 = new Customer
-            //{
-            //    FirstName = "Hannah",
-            //    LastName = "Handlebars",
-            //    BillingAddress = "23 Floof Rd.",
-            //    BillingZip = "64477",
-            //    BillingCity = "Fluffington",
-            //    DeliveryAddress = "23 Floof Rd.",
-            //    DeliveryZip = "64477",
-            //    DeliveryCity = "Fluffington",
-            //    EmailAddress = "hannah_rockz@hotmail.com",
-            //    PhoneNumber = "0722267435"
-            //};
-            //var c2 = new Customer
-            //{
-            //    FirstName = "Ronald",
-            //    LastName = "Racuous",
-            //    BillingAddress = "23 Floof Rd.",
-            //    BillingZip = "64477",
-            //    BillingCity = "Fluffington",
-            //    DeliveryAddress = "23 Floof Rd.",
-            //    DeliveryZip = "64477",
-            //    DeliveryCity = "Fluffington",
-            //    EmailAddress = "rockin_ronald@soawesome.me",
-            //    PhoneNumber = "0762458731"
-            //};
-            //var c3 = new Customer
-            //{
-            //    FirstName = "Pia",
-            //    LastName = "Pajama",
-            //    BillingAddress = "18 Bunnyhop Ln.",
-            //    BillingZip = "64458",
-            //    BillingCity = "Fluffington",
-            //    DeliveryAddress = "18 Bunnyhop Ln.",
-            //    DeliveryZip = "64458",
-            //    DeliveryCity = "Fluffington",
-            //    EmailAddress = "pia_loves_bunnies@floof.com.au",
-            //    PhoneNumber = "0708742354"
-            //};
-            //context.Customers.AddOrUpdate(c => c.ID, c1, c2, c3);
+            //Seeds an administrator role if it doesn't already exist
+            if (!context.Roles.Any(r => r.Name == "Administrator"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole { Name = "Administrator" };
+                manager.Create(role);
+            }
+            //Seeds an administrator account. Obviously this is a poor idea for an actual application
+            if (!context.Users.Any(u => u.UserName == "admin@app.com"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var manager = new UserManager<ApplicationUser>(store);
+                var AdminUser = new ApplicationUser
+                {
+                    FirstName = "Admin",
+                    LastName = "I. Strator",
+                    UserName = "admin@app.com",
+                    Email = "admin@app.com",
+                };
+
+
+                manager.Create(AdminUser, "P@ssword1");
+                manager.AddToRole(AdminUser.Id, "Administrator");
+            }
+
+            //Seeds users/customers to the database
+            if (!context.Users.Any(u => u.UserName == "hannah_rockz@hotmail.com"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var manager = new UserManager<ApplicationUser>(store);
+                var C1 = new ApplicationUser
+                {
+                    FirstName = "Hannah",
+                    LastName = "Handlebars",
+                    BillingAddress = "23 Floof Rd.",
+                    BillingZip = "64477",
+                    BillingCity = "Fluffington",
+                    DeliveryAddress = "23 Floof Rd.",
+                    DeliveryZip = "64477",
+                    DeliveryCity = "Fluffington",
+                    PhoneNumber = "0722267435",
+                    UserName = "hannah_rockz@hotmail.com",
+                    Email = "hannah_rocks@hotmail.com",
+                };
+                var C2 = new ApplicationUser
+                {
+                    FirstName = "Ronald",
+                    LastName = "Racuous",
+                    BillingAddress = "23 Floof Rd.",
+                    BillingZip = "64477",
+                    BillingCity = "Fluffington",
+                    DeliveryAddress = "23 Floof Rd.",
+                    DeliveryZip = "64477",
+                    DeliveryCity = "Fluffington",
+                    Email = "rockin_ron@aweso.me",
+                    PhoneNumber = "0762458731",
+                    UserName = "rockin_ron@aweso.me"
+                };
+                var C3 = new ApplicationUser
+                {
+                    FirstName = "Pia",
+                    LastName = "Pajama",
+                    BillingAddress = "18 Bunnyhop Ln.",
+                    BillingZip = "64458",
+                    BillingCity = "Fluffington",
+                    DeliveryAddress = "18 Bunnyhop Ln.",
+                    DeliveryZip = "64458",
+                    DeliveryCity = "Fluffington",
+                    Email = "pia_loves_bunnies@floof.com.au",
+                    UserName = "pia_loves_bunnies@floof.com.au",
+                    PhoneNumber = "0708742354"
+                };
+
+
+                manager.Create(C1, "P@ssword1");
+                manager.Create(C2, "P@ssword1");
+                manager.Create(C3, "P@ssword1");
+            }
 
             var m1 = new Movie
             {
@@ -255,29 +294,7 @@ namespace Pop.ly.Migrations
             //};
             //context.OrderRows.AddOrUpdate(row => row.ID, or1r1, or1r2);
             
-            //Seeds an administrator role if it doesn't already exist
-            if (!context.Roles.Any(r => r.Name == "Administrator"))
-            {
-                var store = new RoleStore<IdentityRole>(context);
-                var manager = new RoleManager<IdentityRole>(store);
-                var role = new IdentityRole { Name = "Administrator" };
-                manager.Create(role);
-            }
-            //Seeds an administrator account. Obviously this is a poor idea for an actual application
-            if (!context.Users.Any(u => u.UserName == "admin@app.com"))
-            {
-                var store = new UserStore<ApplicationUser>(context);
-                var manager = new UserManager<ApplicationUser>(store);
-                var AdminUser = new ApplicationUser {
-                    FirstName = "Admin",
-                    LastName = "I. Strator",
-                    UserName = "admin@app.com",
-                    Email ="admin@app.com", };
-                
-
-                manager.Create(AdminUser, "P@ssword1");
-                manager.AddToRole(AdminUser.Id, "Administrator");
-            }
+            
         }
     }
 }

@@ -49,7 +49,8 @@ textarea {
 
 
 .carousel-item  {
-  background-color: lightcoral;
+  background-size: cover; background-repeat: no-repeat;
+  min-height: 460px;
   max-height: 460px;
 }
 
@@ -68,12 +69,61 @@ textarea {
     display: flex;
     min-width: 100%;
     min-height: 280px;
+    overflow-x: hidden;
 }
 
-.RibbonContent {
+.MovieRibbonContent {
     margin: 6px;
     max-height: 260px;
     align-self: center;
+    position: relative;
+    z-index: -1;
+}
+
+.MovieRibbonContent img {
+    max-height: 260px;
+}
+
+.MovieRibbonController {
+    display: inline-flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    height: 260px;
+    padding: 20px;
+}
+
+.MovieRibbonLeftControl {
+    position: absolute;
+    left: 0;
+}
+
+.MovieRibbonRightControl {
+    position: absolute;
+    right: 0;
+}
+
+.MovieRibbonController i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 60px;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 80px;
+    box-shadow: 0 0px 0px 2px rgba(255, 255, 255, 0.3);
+}
+
+.MovieRibbonController i:hover {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 60px;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 80px;
+    box-shadow: 0 0px 0px 1px rgba(218, 165, 32, 0.7), 0 0px 0px 5px rgba(255, 140, 50, 0.225);
 }
 
 .RibbonContent img {

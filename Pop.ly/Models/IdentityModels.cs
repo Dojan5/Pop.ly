@@ -29,8 +29,6 @@ namespace Pop.ly.Models
         public string DeliveryZip { get; set; }
         [Display(Name = "Delivery City")]
         public string DeliveryCity { get; set; }
-        [Display(Name = "Email Address")]
-        public string EmailAddress { get; set; }
         [Display(Name = "Phone Number")]
         public override string PhoneNumber { get; set; }
 

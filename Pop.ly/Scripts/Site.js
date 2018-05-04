@@ -1,7 +1,13 @@
 ﻿$(document).ready(function () {
     $('#TrailerOverlay').on('shown.bs.modal', function () {
         $('#TrailerToggle').trigger('focus')
-    })
+    });
+    $('.MovieRibbonLeftControl').mouseover(function () {
+        $(this).siblings('.MovieRibbonContent').animate({ right: "300px" })
+    });
+    $('.MovieRibbonRightControl').mouseover(function () {
+        $(this).siblings('.MovieRibbonContent').animate({left: "300px"})
+    });
 });
 
 //Ajax function handling adding new items to the cart

@@ -2,11 +2,20 @@
 
 <hr />
 <section class="MovieRibbon mt-2">
+    <span class="MovieRibbonController MovieRibbonLeftControl">
+        <i class="fas fa-angle-left"></i>
+    </span>
+    <span class="MovieRibbonController MovieRibbonRightControl">
+        <i class="fas fa-angle-right"></i>
+    </span>
     @foreach (var movie in Model)
     {
-        <div class="RibbonContent">
-            <a href="/Movie/?T=@movie.Title&Y=@movie.ReleaseYear"><img src="@movie.CoverArt" /></a>
-        </div>
+        <a href="/Movie/?T=@movie.Title&Y=@movie.ReleaseYear">
+            <div class="MovieRibbonContent">
+                <img src="@movie.CoverArt" />
+            </div>
+        </a>
     }
+    
 </section>
 <hr />

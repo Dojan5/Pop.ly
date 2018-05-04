@@ -10,6 +10,7 @@ namespace Pop.ly.Models
 {
     public class HomeIndexVieWModel
     {
+        public Random r = new Random();
         ApplicationDbContext db = new ApplicationDbContext();
         public IEnumerable<Movie> Carousel { get; set; }
         [Display(Name ="Hot Items")]
@@ -19,7 +20,7 @@ namespace Pop.ly.Models
 
         public void Populate()
         {
-            Carousel = db.Movies.Select(m => m).Take(3);
+            Carousel = db.Movies.OrderByDescending(m => m.ReleaseYear).Take(3);
             Popular = db.Movies.Select(m => m);
             RecentlyReleased = db.Movies.Where(m => m.ReleaseYear == DateTime.Now.Year);
         }

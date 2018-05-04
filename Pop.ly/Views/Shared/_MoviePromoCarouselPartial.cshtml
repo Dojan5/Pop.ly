@@ -13,20 +13,17 @@
 
     @*Handles the carousel items. Figure out a system to do this dynamically.*@
     <div class="carousel-inner" role="listbox">
-        <div class="carousel-item active">
-            <img src="@movies[0].PromoArt" />
+        <div class="carousel-item active" style="background-image: url(@movies[0].PromoArt)">
             <div class="carousel-caption">
                 <p>@movies[0].Description.Substring(0, 180) ...</p>
             </div>
         </div>
-        <div class="carousel-item">
-            <img src="@movies[1].PromoArt" />
+        <div class="carousel-item" style="background-image: url(@movies[1].PromoArt)">
             <div class="carousel-caption">
                 <p>@movies[1].Description.Substring(0, 180) ...</p>
             </div>
         </div>
-        <div class="carousel-item">
-            <img src="@movies[2].PromoArt" />
+        <div class="carousel-item" style="background-image: url(@movies[2].PromoArt)">
             <div class="carousel-caption">
                 <p>@movies[2].Description.Substring(0, 180) ...</p>
             </div>
