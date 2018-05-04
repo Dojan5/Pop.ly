@@ -26,6 +26,7 @@
             }
         },
         margin: 10,
+        slideBy: 4,
         center: true,
         loop: true,
         nav: true,
