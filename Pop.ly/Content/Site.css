@@ -195,13 +195,28 @@ textarea {
 
 hr.golden-fade-right {
     border: 0;
-    height: 1px;
+    height: 2px;
     background-image: linear-gradient(rgba(218, 165, 32, 0.75), rgba(0, 0, 0, 0));
 }
 
 #DetailsMovieTitle {
     text-decoration-style: wavy;
     text-decoration-color: white;
+}
+
+.MainPageHeader {
+    display: flex;
+    align-items: center;
+    height: 42px;
+}
+
+.MainPageHeader h3 {
+    margin: 0;
+    padding: 0;
+    margin-left: 18px;
+    padding-left: 8px;
+    border-left: 4px solid;
+    border-color: goldenrod;
 }
 
 /* Owl Carousel stuff*/

@@ -3,14 +3,20 @@
 @model HomeIndexVieWModel
 
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "BUY OUR STUFF";
 }
+
 <div class="container pt-4">
     @Html.Partial("_MoviePromoCarouselPartial", Model.Carousel)
 </div>
 
-<h4>Popular</h4>
+<div class="MainPageHeader mt-4">
+    <h3>Popular</h3>
+</div>
 @Html.Partial("_MovieRibbonPartial", Model.Popular)
 
-<h4>New Releases</h4>
+<div class="MainPageHeader">
+    <h3>New Releases</h3>
+</div>
+
 @Html.Partial("_MovieRibbonPartial", Model.RecentlyReleased)
