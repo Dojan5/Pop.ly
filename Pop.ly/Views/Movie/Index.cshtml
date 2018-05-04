@@ -1,7 +1,23 @@
-﻿@model Pop.ly.Models.Database.MovieIndexViewController
+﻿@using Microsoft.AspNet.Identity
+@model Pop.ly.Models.Database.MovieIndexViewController
 @{
     ViewBag.Title = "MovieDetails";
 }
 
 @Html.Partial("_MovieDetailPartial", @Model.Movie)
+
+@if (Request.IsAuthenticated)
+{
+
+        <form id="ReviewForm" class="col-md-4 offset-4 p-4">
+            <div class="form-group">
+                <textarea class="form-control" id="ReviewText" rows="3" style="width: 100%;"></textarea>
+            </div>
+            <div class="form-group text-right">
+                <button type="button" class="btn btn-secondary">Submit</button>
+            </div>
+        </form>
+
+}
+
 @Html.Partial("_CustomerReviewsPartial", @Model.Reviews)

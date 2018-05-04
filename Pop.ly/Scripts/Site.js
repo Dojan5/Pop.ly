@@ -1,4 +1,7 @@
 ﻿$(document).ready(function () {
+    $('#TrailerOverlay').on('shown.bs.modal', function () {
+        $('#TrailerToggle').trigger('focus')
+    })
 });
 
 //Ajax function handling adding new items to the cart
