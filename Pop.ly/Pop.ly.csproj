@@ -264,6 +264,14 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Movies\Alice1999_Cover.jpg" />
+    <Content Include="Content\Images\Movies\Alice1999_promo.jpg" />
+    <Content Include="Content\Images\Movies\beast2017_cover.jpg" />
+    <Content Include="Content\Images\Movies\beast2017_promo.jpg" />
+    <Content Include="Content\Images\Movies\BookClub_cover.jpg" />
+    <Content Include="Content\Images\Movies\BookClub_promo.jpg" />
+    <Content Include="Content\Images\Movies\Deadpool2_cover.jpg" />
+    <Content Include="Content\Images\Movies\Deadpool2_promo.jpg" />
     <Content Include="Content\Images\Movies\gamenight_cover.jpg" />
     <Content Include="Content\Images\Movies\gamenight_promo.jpg" />
     <Content Include="Content\Images\Movies\iceage3_cover.jpg" />
@@ -272,6 +280,8 @@
     <Content Include="Content\Images\Movies\Interstellar_Promo.jpg" />
     <Content Include="Content\Images\Movies\jurassic_world_cover.jpg" />
     <Content Include="Content\Images\Movies\jurassic_world_promo.jpg" />
+    <Content Include="Content\Images\Movies\LifeOfTheParty_cover.jpg" />
+    <Content Include="Content\Images\Movies\LifeOfTheParty_promo.jpg" />
     <Content Include="Content\Images\Movies\moana_cover.jpg" />
     <Content Include="Content\Images\Movies\moana_promo.jpg" />
     <Content Include="Content\Images\Movies\notebook_cover.jpg" />
@@ -280,6 +290,8 @@
     <Content Include="Content\Images\Movies\peterrabbit_promo.jpg" />
     <Content Include="Content\Images\Movies\readyplayerone_cover.jpg" />
     <Content Include="Content\Images\Movies\readyplayerone_promo.jpg" />
+    <Content Include="Content\Images\Movies\showdogs_cover.jpg" />
+    <Content Include="Content\Images\Movies\showdogs_promo.jpg" />
     <Content Include="Content\Images\Movies\TheGreatestShowman_cover.jpg" />
     <Content Include="Content\Images\Movies\TheGreatestShowman_promo.jpg" />
     <Content Include="Content\Images\Movies\TombRaider2018_cover.jpg" />

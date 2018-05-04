@@ -8,6 +8,7 @@ namespace Pop.ly.Migrations
     using Microsoft.AspNet.Identity.EntityFramework;
     using Microsoft.AspNet.Identity;
     using Models;
+    using System.Collections.Generic;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Pop.ly.Models.ApplicationDbContext>
     {
@@ -96,11 +97,71 @@ namespace Pop.ly.Migrations
                     UserName = "pia_loves_bunnies@floof.com.au",
                     PhoneNumber = "0708742354"
                 };
+                var C4 = new ApplicationUser
+                {
+                    FirstName = "Marjory",
+                    LastName = "Delaqua",
+                    BillingAddress = "14 Grenth Plaza.",
+                    BillingZip = "66645",
+                    BillingCity = "Divinity's Reach",
+                    DeliveryAddress = "14 Grenth Plaza",
+                    DeliveryZip = "66645",
+                    DeliveryCity = "Divinity's Reach",
+                    Email = "srs_bznz@thepact.com",
+                    UserName = "srs_bznz@thepact.com",
+                    PhoneNumber = "0757896521"
+                };
+                var C5 = new ApplicationUser
+                {
+                    FirstName = "Kasmeer",
+                    LastName = "Meade",
+                    BillingAddress = "14 Grenth Plaza.",
+                    BillingZip = "66645",
+                    BillingCity = "Divinity's Reach",
+                    DeliveryAddress = "14 Grenth Plaza",
+                    DeliveryZip = "66645",
+                    DeliveryCity = "Divinity's Reach",
+                    Email = "pink_butterflies@thepact.com",
+                    UserName = "pink_butterflies@thepact.com",
+                    PhoneNumber = "0748942482"
+                };
+                var C6 = new ApplicationUser
+                {
+                    FirstName = "Frederique",
+                    LastName = "Gaston",
+                    BillingAddress = "2 Barley Ave.",
+                    BillingZip = "87954",
+                    BillingCity = "Thompton",
+                    DeliveryAddress = "2 Barley Ave.",
+                    DeliveryZip = "87954",
+                    DeliveryCity = "Thompton",
+                    Email = "ihatebeer@gmail.com",
+                    UserName = "ihatebeer@gmail.com",
+                    PhoneNumber = "0724821212"
+                };
+                var C7 = new ApplicationUser
+                {
+                    FirstName = "Eoghan",
+                    LastName = "McGrath",
+                    BillingAddress = "1 Spice Plaza Apts.",
+                    BillingZip = "78545",
+                    BillingCity = "Verilla",
+                    DeliveryAddress = "1 Spice Plaza Apts.",
+                    DeliveryZip = "78545",
+                    DeliveryCity = "Verilla",
+                    Email = "notavampire@simail.com",
+                    UserName = "notavampire@simail.com",
+                    PhoneNumber = "0765484852"
+                };
 
 
                 manager.Create(C1, "P@ssword1");
                 manager.Create(C2, "P@ssword1");
                 manager.Create(C3, "P@ssword1");
+                manager.Create(C4, "P@ssword1");
+                manager.Create(C5, "P@ssword1");
+                manager.Create(C6, "P@ssword1");
+                manager.Create(C7, "P@ssword1");
             }
 
             var m1 = new Movie
@@ -230,20 +291,78 @@ namespace Pop.ly.Migrations
             };
             var m11 = new Movie
             {
-                Title = "Ready Player One",
+                Title = "Show Dogs",
                 ReleaseYear = 2018,
-                Director = "Steven Spielberg",
-                Genre = "Action, Adventure, Sci-Fi",
-                Description = "In the year 2045, the real world is a harsh place. The only time Wade Watts (Tye Sheridan) truly feels alive is when he escapes to the OASIS, an immersive virtual universe where most of humanity spends their days. In the OASIS, you can go anywhere, do anything, be anyone-the only limits are your own imagination. The OASIS was created by the brilliant and eccentric James Halliday (Mark Rylance), who left his immense fortune and total control of the Oasis to the winner of a three-part contest he designed to find a worthy heir. When Wade conquers the first challenge of the reality-bending treasure hunt, he and his friends-aka the High Five-are hurled into a fantastical universe of discovery and danger to save the OASIS.",
+                Director = "Raja Gosnell",
+                Genre = "Action, Adventure, Comedy",
+                Description = "Max, a macho, solitary Rottweiler police dog is ordered to go undercover as a primped show dog in a prestigious Dog Show, along with his human partner, to avert a disaster from happening.",
                 Price = 30,
-                CoverArt = @"/Content/Images/Movies/readyplayerone_cover.jpg",
-                PromoArt = @"/Content/Images/Movies/readyplayerone_promo.jpg",
-                TrailerURL = @"cSp1dM2Vj48"
+                CoverArt = @"/Content/Images/Movies/showdogs_cover.jpg",
+                PromoArt = @"/Content/Images/Movies/showdogs_promo.jpg",
+                TrailerURL = @"eT9eWtb7C4c"
             };
-            
+            var m12 = new Movie
+            {
+                Title = "Beast",
+                ReleaseYear = 2017,
+                Director = "Michael Pearce",
+                Genre = "Drama",
+                Description = "A troubled woman living in an isolated community finds herself pulled between the control of her oppressive family and the allure of a secretive outsider suspected of a series of brutal murders.",
+                Price = 28,
+                CoverArt = @"/Content/Images/Movies/beast2017_cover.jpg",
+                PromoArt = @"/Content/Images/Movies/beast2017_promo.jpg",
+                TrailerURL = @"l6CWOjYSGH8"
+            };
+            var m13 = new Movie
+            {
+                Title = "Life of the Party",
+                ReleaseYear = 2018,
+                Director = "Ben Falcone",
+                Genre = "Comedy",
+                Description = "When her husband suddenly dumps her, longtime dedicated housewife Deanna turns regret into re-set by going back to college - landing in the same class and school as her daughter, who's not entirely sold on the idea. Plunging headlong into the campus experience, the increasingly outspoken Deanna -- now Dee Rock -- embraces freedom, fun, and frat boys on her own terms, finding her true self in a senior year no one ever expected.",
+                Price = 30,
+                CoverArt = @"/Content/Images/Movies/LifeOfTheParty_cover.jpg",
+                PromoArt = @"/Content/Images/Movies/LifeOfTheParty_promo.jpg",
+                TrailerURL = @"T1B1CxmAXLk"
+            };
+            var m14 = new Movie
+            {
+                Title = "Deadpool 2",
+                ReleaseYear = 2018,
+                Director = "David Leitch",
+                Genre = "Action, Adventure, Comedy",
+                Description = "After surviving a near fatal bovine attack, a disfigured cafeteria chef (Wade Wilson) struggles to fulfill his dream of becoming Mayberry's hottest bartender while also learning to cope with his lost sense of taste. Searching to regain his spice for life, as well as a flux capacitor, Wade must battle ninjas, the Yakuza, and a pack of sexually aggressive canines, as he journeys around the world to discover the importance of family, friendship, and flavor - finding a new taste for adventure and earning the coveted coffee mug title of World's Best Lover.",
+                Price = 30,
+                CoverArt = @"/Content/Images/Movies/Deadpool2_cover.jpg",
+                PromoArt = @"/Content/Images/Movies/Deadpool2_promo.jpg",
+                TrailerURL = @"D86RtevtfrA"
+            };
+            var m15 = new Movie
+            {
+                Title = "Book Club",
+                ReleaseYear = 2018,
+                Director = "Bill Holderman",
+                Genre = "Comedy",
+                Description = "Four older women spend their lives attending a book club where they bond over the typical suggested literature. One day, they end up reading Fifty Shades of Grey and are turned on by the content. Viewing it as a wake up call, they decide to expand their lives and chase pleasures that have eluded them.",
+                Price = 30,
+                CoverArt = @"/Content/Images/Movies/BookClub_cover.jpg",
+                PromoArt = @"/Content/Images/Movies/BookClub_promo.jpg",
+                TrailerURL = @"LDxgPIsv6sY"
+            };
+            var m16 = new Movie
+            {
+                Title = "Alice in Wonderland",
+                ReleaseYear = 1999,
+                Director = "Nick Welling",
+                Genre = "Adventure, Comedy, Family",
+                Description = "Alice follows a white rabbit down a rabbit-hole into a whimsical Wonderland, where she meets characters like the delightful Cheshire Cat, the clumsy White Knight, a rude caterpillar, and the hot-tempered Queen of Hearts and can grow ten feet tall or shrink to three inches. But will she ever be able to return home?",
+                Price = 12,
+                CoverArt = @"/Content/Images/Movies/Alice1999_cover.jpg",
+                PromoArt = @"/Content/Images/Movies/Alice1999_promo.jpg",
+                TrailerURL = @"LDxgPIsv6sY"
+            };
+            context.Movies.AddOrUpdate(m => m.ID, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14, m15, m16);
 
-
-            context.Movies.AddOrUpdate(m => m.ID, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10);
             //Seeds reviews for Interstellar
             //var rev1 = new Review
             //{
@@ -273,7 +392,7 @@ namespace Pop.ly.Migrations
             //Creates order
             //var order1 = new Order
             //{
-            //    Customer = c1,
+            //    User = C1,
             //    OrderDate = DateTime.Now
             //};
             //context.Orders.AddOrUpdate(or => or.ID, order1);
@@ -293,8 +412,8 @@ namespace Pop.ly.Migrations
             //    Quantity = 1
             //};
             //context.OrderRows.AddOrUpdate(row => row.ID, or1r1, or1r2);
-            
-            
+
+
         }
     }
 }

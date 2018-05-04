@@ -22,7 +22,7 @@ namespace Pop.ly.Models
         {
             Carousel = db.Movies.OrderByDescending(m => m.ReleaseYear).Take(3);
             Popular = db.Movies.Select(m => m);
-            RecentlyReleased = db.Movies.Where(m => m.ReleaseYear == DateTime.Now.Year);
+            RecentlyReleased = db.Movies.Where(m => m.ReleaseYear >= DateTime.Now.Year -1);
         }
     }
 }
