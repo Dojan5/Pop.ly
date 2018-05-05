@@ -43,8 +43,8 @@ namespace Pop.ly.Models
             {
                 OrderRow row = new OrderRow
                 {
-                    
-                    Movie = item.Movie,
+
+                    MovieID = item.Movie.ID,
                     Price = item.CostPerItem * item.Quantity,
                     Quantity = item.Quantity
                 };
