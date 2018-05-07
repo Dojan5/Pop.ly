@@ -361,7 +361,19 @@ namespace Pop.ly.Migrations
                 PromoArt = @"/Content/Images/Movies/Alice1999_promo.jpg",
                 TrailerURL = @"LDxgPIsv6sY"
             };
-            context.Movies.AddOrUpdate(m => m.ID, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14, m15, m16);
+            var m17 = new Movie
+            {
+                Title = "A Fistful of Dollars",
+                ReleaseYear = 1964,
+                Director = "Sergio Leone",
+                Genre = "Western",
+                Description = "An anonymous, but deadly man rides into a town torn by war between two factions, the Baxters and the Rojo's. Instead of fleeing or dying, as most other would do, the man schemes to play the two sides off each other, getting rich in the bargain.",
+                Price = 5,
+                CoverArt = @"/Content/Images/Movies/FistfulOfDollars_cover.jpg",
+                PromoArt = @"/Content/Images/Movies/FistfulOfDollars_promo.jpg",
+                TrailerURL = @"X2DtiE7VLw"
+            };
+            context.Movies.AddOrUpdate(m => m.ID, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14, m15, m16, m17);
 
             //Seeds reviews for Interstellar
             //var rev1 = new Review
