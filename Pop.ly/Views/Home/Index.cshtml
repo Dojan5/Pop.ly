@@ -20,3 +20,15 @@
 </div>
 
 @Html.Partial("_MovieRibbonPartial", Model.RecentlyReleased)
+
+<div class="MainPageHeader">
+    <h3>Old Favourites</h3>
+</div>
+
+@Html.Partial("_MovieRibbonPartial", Model.OldestMovies)
+
+<div class="MainPageHeader">
+    <h3>Great Deals</h3>
+</div>
+
+@Html.Partial("_MovieRibbonPartial", Model.CheapestMovies)
