@@ -337,16 +337,20 @@ hr.golden-fade-right {
 
 .SingleMovie{
     display: flex;
-    width: 175px;
+    width: 160px;
     height: 215px;
     background-position: center;
-    background-size: cover;
+    background-size:cover;
     text-decoration:none;
     color:white;
     margin: 12px;
 }
-    .SingleMovie:hover {
-    box-shadow: 0 0px 4px 2px rgba(218, 165, 32, 0.9), 0 0px 6px 4px rgba(255, 140, 50, 0.225);
+    .SingleMovie:Hover {
+    box-shadow: 0 0px 4px 2px rgba(218, 165, 32, 0.9), 0 0px 6px 4px rgba(255, 140, 50, 0.225), 0 0px 16px 20px rgba(0, 0, 0, 0.5);
+    text-decoration:none;
+    animation: pop 0.3 linear 1;
+    transition: all .18s ease-in-out;
+    transform:scale(1.2);
     
     }
 

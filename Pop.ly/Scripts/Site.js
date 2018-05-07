@@ -4,7 +4,9 @@
     });
     //Movie ribbon controllers
     $('.SingleMovie').hover(function () {
-        $(this).children('.SingleMovieDetails').fadeToggle(100);
+        $(this).children('.SingleMovieDetails').fadeToggle(180);
+        //$(this).animate({ 'zoom'  }, 100).children('.SingleMovieDetails').fadeToggle(100);
+
     });
     //Owl Carousel
     $(".owl-carousel").owlCarousel({
