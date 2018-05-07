@@ -16,7 +16,7 @@ namespace Pop.ly.Controllers
         public ActionResult Index()
         {
             ShoppingCart cart = new ShoppingCart();
-            if(Session["Cart"] != null)
+            if (Session["Cart"] != null)
             {
                 cart = (ShoppingCart)Session["Cart"];
             }
@@ -56,7 +56,11 @@ namespace Pop.ly.Controllers
             {
                 cart = (ShoppingCart)Session["Cart"];
             }
-            cart.Items.RemoveAt(index);
+            if (cart.Items.Count > 0)
+            {
+                cart.Items.RemoveAt(index);
+            }
+            Session["Cart"] = cart;
             return null;
         }
         //PlaceOrder
