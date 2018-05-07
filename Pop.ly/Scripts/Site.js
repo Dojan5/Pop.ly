@@ -3,11 +3,8 @@
         $('#TrailerToggle').trigger('focus')
     });
     //Movie ribbon controllers
-    $('.MovieRibbonLeftControl').mouseover(function () {
-        $(this).siblings('.MovieRibbonContent').animate({ scrollLeft: -1000 }, 400);
-    });
-    $('.MovieRibbonRightControl').mouseover(function () {
-        $(this).siblings('.MovieRibbonContent').animate({ scrollLeft: 1000 }, 400);
+    $('.SingleMovie').hover(function () {
+        $(this).children('.SingleMovieDetails').fadeToggle(100);
     });
     //Owl Carousel
     $(".owl-carousel").owlCarousel({

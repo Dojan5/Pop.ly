@@ -28,6 +28,11 @@ namespace Pop.ly.Controllers
             //Passes the view model object into the view
             return View(model);
         }
+        public ActionResult temp()
+        {
+            Movie model = db.Movies.Where(m => m.Title == "Interstellar").Select(m => m).FirstOrDefault();
+            return View(model);
+        }
        
     }
 }
