@@ -4,9 +4,7 @@
   
         @foreach (var movie in Model)
         {
-            <div class="col m-2 p-0" id="browsermovieobj">
-                <img src="@movie.CoverArt">
-            </div>
+            @Html.Partial("_MovieCardPartial", movie)
         }
  
 </div>

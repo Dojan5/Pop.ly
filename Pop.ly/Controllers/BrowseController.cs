@@ -14,24 +14,22 @@ namespace Pop.ly.Controllers
         // GET: Browse
         public ActionResult Index()
         {
-
-            return View();
+            BrowseModel model = new BrowseModel();
+            model.Populate();
+            return View(model);
         }
         public ActionResult Year(int Year)
         {
-            
-            
-            var model = db.Movies.Where(m => m.ReleaseYear == Year).Select(m => m);
-            
-            return View(model);
-            
+            BrowseModel model = new BrowseModel();
+            model.movies = db.Movies.Where(m => m.ReleaseYear == Year).Select(m => m).ToList();            
+            return View(model);        
          
         }
         public ActionResult SortByGenre(string Genre)
         {
             var model = db.Movies.Where(g => g.Genre.Contains(Genre)).Select(g => g);
 
-            return View(model);
+            return PartialView(model);
         }
     }
 }

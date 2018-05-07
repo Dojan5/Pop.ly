@@ -334,3 +334,31 @@ hr.golden-fade-right {
 .RibbonContent img {
     max-height: 240px;
 }
+
+.SingleMovie{
+    display: flex;
+    width: 175px;
+    height: 215px;
+    background-position: center;
+    background-size: cover;
+    text-decoration:none;
+    color:white;
+    margin: 12px;
+}
+    .SingleMovie:hover {
+    box-shadow: 0 0px 4px 2px rgba(218, 165, 32, 0.9), 0 0px 6px 4px rgba(255, 140, 50, 0.225);
+    
+    }
+
+    
+
+.SingleMovieDetails {
+    display: none;
+    flex-direction: column;
+    flex: 1;
+    padding: 4px;
+    background-color: rgba(30, 0, 12, 0.65);
+    top: 0px;
+    height: 100%;
+    width: 100%;
+}
