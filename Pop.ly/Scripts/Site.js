@@ -16,10 +16,8 @@
             600: {
                 items: 6
             },
-            900: {items: 7
-            },
             1080: {
-                items: 12
+                items: 7
             }
         },
         margin: 10,

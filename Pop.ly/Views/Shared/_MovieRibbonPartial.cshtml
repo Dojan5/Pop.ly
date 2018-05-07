@@ -10,11 +10,7 @@
     </span>*@
     @foreach (var movie in Model)
     {
-        <div class="">
-            <a href="/Movie/?T=@movie.Title&Y=@movie.ReleaseYear">
-                <img src="@movie.CoverArt" />
-            </a>
-        </div>
+        @Html.Partial("_MovieCardPartial", movie)
     }
 
 </div>
