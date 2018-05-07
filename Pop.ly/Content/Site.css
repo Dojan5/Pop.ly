@@ -297,6 +297,10 @@ hr.golden-fade-right {
 
 .owl-carousel .owl-stage {
     display: flex;
+    background: linear-gradient(to bottom, #200021 0%,#1b001c 100%);
+    height: 330px;
+    align-items: center;
+    box-shadow: inset 0px 0px 24px 6px rgba(0,0,0,0.5);
 }
 
 .owl-carousel .owl-item img {
@@ -311,13 +315,13 @@ hr.golden-fade-right {
     display: block;
     position: absolute;
     left: 20px;
-    top: 30%;
+    top: 35%;
 }
 
 .owl-next {
     position: absolute;
     right: 20px;
-    top: 30%;
+    top: 35%;
 }
 
     .owl-prev:focus, .owl-next:focus {
@@ -418,15 +422,16 @@ hr.golden-fade-right {
     text-decoration:none;
     color:white;
     margin: 12px;
+    box-shadow: 0 0px 16px 3px rgba(0, 0, 0, 0.5);
 }
-    .SingleMovie:Hover {
+.SingleMovie:Hover {
     box-shadow: 0 0px 4px 2px rgba(218, 165, 32, 0.9), 0 0px 6px 4px rgba(255, 140, 50, 0.225), 0 0px 16px 20px rgba(0, 0, 0, 0.5);
     text-decoration:none;
     animation: pop 0.3 linear 1;
     transition: all .18s ease-in-out;
     transform:scale(1.2);
     
-    }
+}
 
     
 
