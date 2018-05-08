@@ -9,14 +9,14 @@ namespace Pop.ly.Models
 {
     public class BrowseModel
     {
-        public List<Movie> movies { get; set; } = new List<Movie>();
+        public MovieGridViewModel grid = new MovieGridViewModel();
         public List<string> genres {get; set; } = new List<string>();
 
         public void Populate()
         {
             ApplicationDbContext db = new ApplicationDbContext();
             //Populates the list with movies
-            this.movies = db.Movies.Select(m => m).ToList();
+            this.grid.movies = db.Movies.Select(m => m).ToList();
 
             //Populates the list of genres
             List<string> DGenres = new List<string>();
@@ -32,6 +32,11 @@ namespace Pop.ly.Models
             this.genres = DGenres.Distinct().ToList();
             //---
         }
+    
     }
-
+        public class MovieGridViewModel
+        {
+            public string ViewTitle { get; set; } = "";
+            public List<Movie> movies = new List<Movie>();
+        }
 }

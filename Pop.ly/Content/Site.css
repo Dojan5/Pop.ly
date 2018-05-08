@@ -102,9 +102,10 @@ textarea {
     min-width: 100%;
 }
 
-#menu-searchbar {
+#searchbar {
     border-radius: 8rem;
     height: 32px;
+    width: 100%;
 }
 
 #browsermovieobj {

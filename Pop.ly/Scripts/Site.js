@@ -2,11 +2,26 @@
     $('#TrailerOverlay').on('shown.bs.modal', function () {
         $('#TrailerToggle').trigger('focus')
     });
-
-    //$('.SingleMovie').hover(function () {
-    //    $(this).children('.SingleMovieDetails').fadeToggle(180);
-    //    //$(this).animate({ 'zoom'  }, 100).children('.SingleMovieDetails').fadeToggle(100);
-    //});
+    //Script handling genre filtering
+    $(".GenreFilterButton").on("click", function () {
+        var filter = $(this).data("filter");
+        $.ajax({
+            url: "/Browse/SortByGenre/?Genre=" + filter,
+            type: "GET",
+        }).done(function (partialViewResult) {
+            $("#MovieGrid").html(partialViewResult);
+        });
+    });
+    //Script handling search bar
+    $("#searchbar").bind("enterKey",function () {
+        var filter = $(this).val();
+        $.ajax({
+            url: "/Browse/Search/?Q=" + filter,
+            type: "GET",
+        }).done(function (partialViewResult) {
+            $("#MovieGrid").html(partialViewResult);
+        });
+    });
     //Owl Carousel
     $(".owl-carousel").owlCarousel({
         responsiveClass: true,

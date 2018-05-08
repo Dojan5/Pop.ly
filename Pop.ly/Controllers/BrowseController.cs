@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Pop.ly.Models.Database;
 using Pop.ly.Models;
 
+
 namespace Pop.ly.Controllers
 {
     public class BrowseController : Controller
@@ -21,15 +22,25 @@ namespace Pop.ly.Controllers
         public ActionResult Year(int Year)
         {
             BrowseModel model = new BrowseModel();
-            model.movies = db.Movies.Where(m => m.ReleaseYear == Year).Select(m => m).ToList();            
+            model.grid.movies = db.Movies.Where(m => m.ReleaseYear == Year).Select(m => m).ToList();            
             return View(model);        
          
         }
         public ActionResult SortByGenre(string Genre)
         {
-            var model = db.Movies.Where(g => g.Genre.Contains(Genre)).Select(g => g);
+            MovieGridViewModel model = new MovieGridViewModel();
+            model.movies = db.Movies.Where(g => g.Genre.Contains(Genre)).Select(g => g).ToList();
+            model.ViewTitle = Genre;
+            return PartialView("_MovieGridPartial",model);
 
-            return PartialView(model);
+        }
+        public ActionResult Search(string Q)
+        {
+            MovieGridViewModel model = new MovieGridViewModel();
+            int Year = 0;
+            int.TryParse(Q, out Year);
+            model.movies = db.Movies.Where(m => m.Description.Contains(Q) || m.Title.Contains(Q) || m.Genre.Contains(Q) || m.Director.Contains(Q) || m.ReleaseYear == Year).Select(m => m).ToList(); 
+            return PartialView("_MovieGridPartial",model);
         }
     }
 }
