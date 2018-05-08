@@ -261,8 +261,8 @@ div#theatre #curtain-left, div#theatre #curtain-right {
 
     .badge-golden:hover {
         text-decoration: none;
-        color: white;
-        box-shadow: 0 0px 0px 1px rgba(218, 165, 32, 0.5), 0 0px 0px 5px rgba(255, 140, 30, 0.125);
+        color: white !important;
+        box-shadow: 0 0px 8px 1px rgba(218, 165, 32, 0.5), 0 0px 12px 5px rgba(255, 140, 30, 0.125);
     }
 
 /* Gradient transparent - color - transparent */
@@ -425,7 +425,7 @@ hr.golden-fade-right {
     box-shadow: 0 0px 16px 3px rgba(0, 0, 0, 0.5);
 }
 .SingleMovie:Hover {
-    box-shadow: 0 0px 4px 2px rgba(218, 165, 32, 0.9), 0 0px 6px 4px rgba(255, 140, 50, 0.225), 0 0px 16px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0px 4px 2px rgba(218, 165, 32, 0.9), 0 0px 6px 4px rgba(255, 140, 50, 0.225), 0 0px 32px 20px rgba(0, 0, 0, 0.7);
     text-decoration:none;
     animation: pop 0.3 linear 1;
     transition: all .18s ease-in-out;
@@ -433,7 +433,9 @@ hr.golden-fade-right {
     
 }
 
-    
+.SingleMovie:hover .SingleMovieDetails {
+    display: flex;
+}   
 
 .SingleMovieDetails {
     display: none;
@@ -444,4 +446,12 @@ hr.golden-fade-right {
     top: 0px;
     height: 100%;
     width: 100%;
+}
+
+.MovieCardWrapper {
+    text-decoration: none;
+}
+
+.MovieCardWrapper:hover {
+    text-decoration: none;
 }

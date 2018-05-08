@@ -1,7 +1,7 @@
 ﻿@using Microsoft.AspNet.Identity
 @model Pop.ly.Models.Database.MovieIndexViewModel
 @{
-    ViewBag.Title = "MovieDetails";
+    ViewBag.Title = Model.Movie.Title;
 }
 
 @Html.Partial("_MovieDetailPartial", @Model.Movie)

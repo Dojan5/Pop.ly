@@ -2,12 +2,11 @@
     $('#TrailerOverlay').on('shown.bs.modal', function () {
         $('#TrailerToggle').trigger('focus')
     });
-    //Movie ribbon controllers
-    $('.SingleMovie').hover(function () {
-        $(this).children('.SingleMovieDetails').fadeToggle(180);
-        //$(this).animate({ 'zoom'  }, 100).children('.SingleMovieDetails').fadeToggle(100);
 
-    });
+    //$('.SingleMovie').hover(function () {
+    //    $(this).children('.SingleMovieDetails').fadeToggle(180);
+    //    //$(this).animate({ 'zoom'  }, 100).children('.SingleMovieDetails').fadeToggle(100);
+    //});
     //Owl Carousel
     $(".owl-carousel").owlCarousel({
         responsiveClass: true,
@@ -20,6 +19,9 @@
             },
             1080: {
                 items: 7
+            },
+            1600: {
+                items: 10
             }
         },
         margin: 10,
