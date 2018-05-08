@@ -255,15 +255,18 @@ div#theatre #curtain-left, div#theatre #curtain-right {
 }
 
 .badge-golden {
-    background-color: goldenrod;
+    background-color: none;
     color: white;
     text-decoration: none;
+ 
+    
 }
 
     .badge-golden:hover {
         text-decoration: none;
         color: white !important;
         box-shadow: 0 0px 8px 1px rgba(218, 165, 32, 0.5), 0 0px 12px 5px rgba(255, 140, 30, 0.125);
+     
     }
 
 /* Gradient transparent - color - transparent */
