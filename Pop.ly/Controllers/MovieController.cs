@@ -16,7 +16,7 @@ namespace Pop.ly.Controllers
         public ActionResult Index(string T, int Y)
         {
             //Creates an object out of the view model, you can find it in Models/Database/Movies
-            MovieIndexViewController model = new MovieIndexViewController();
+            MovieIndexViewModel model = new MovieIndexViewModel();
             //Fetches a movie object from database
             Movie movieObject = db.Movies.Where(m => m.Title == T && m.ReleaseYear == Y).Select(m => m).First();
             //Fetches list of reviews from database

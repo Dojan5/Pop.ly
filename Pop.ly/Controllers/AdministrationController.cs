@@ -22,5 +22,16 @@ namespace Pop.ly.Controllers
             var model = db.Orders.Select(o => o).ToList();
             return View(model);
         }
+        [HttpGet]
+        public ActionResult AddMovie()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddMovie(Movie obj)
+        {
+            Movie.SaveMovieToDB(obj);
+            return View();
+        }
     }
 }

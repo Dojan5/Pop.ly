@@ -424,6 +424,7 @@
     <Content Include="Views\Browse\SortByGenre.cshtml" />
     <Content Include="Views\Movie\temp.cshtml" />
     <Content Include="Views\Shared\_MovieCardPartial.cshtml" />
+    <Content Include="Views\Administration\AddMovie.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
