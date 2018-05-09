@@ -271,6 +271,8 @@
     <Content Include="Content\Images\Movies\beast2017_promo.jpg" />
     <Content Include="Content\Images\Movies\BookClub_cover.jpg" />
     <Content Include="Content\Images\Movies\BookClub_promo.jpg" />
+    <Content Include="Content\Images\Movies\casablanca_cover.jpg" />
+    <Content Include="Content\Images\Movies\casablanca_promo.jpg" />
     <Content Include="Content\Images\Movies\Deadpool2_cover.jpg" />
     <Content Include="Content\Images\Movies\Deadpool2_promo.jpg" />
     <Content Include="Content\Images\Movies\gamenight_cover.jpg" />
@@ -295,6 +297,8 @@
     <Content Include="Content\Images\Movies\showdogs_promo.jpg" />
     <Content Include="Content\Images\Movies\TheGreatestShowman_cover.jpg" />
     <Content Include="Content\Images\Movies\TheGreatestShowman_promo.jpg" />
+    <Content Include="Content\Images\Movies\titanic_cover.jpg" />
+    <Content Include="Content\Images\Movies\Titanic_promo.JPG" />
     <Content Include="Content\Images\Movies\TombRaider2018_cover.jpg" />
     <Content Include="Content\Images\Movies\TombRaider2018_promo.jpg" />
     <Content Include="Content\Images\ph1.svg" />

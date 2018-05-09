@@ -373,7 +373,31 @@ namespace Pop.ly.Migrations
                 PromoArt = @"/Content/Images/Movies/FistfulOfDollars_promo.jpg",
                 TrailerURL = @"X2DtiE7VLw"
             };
-            context.Movies.AddOrUpdate(m => m.ID, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14, m15, m16, m17);
+               var m18 = new Movie
+            {
+                Title = "Casablanca",
+                ReleaseYear = 1942,
+                Director = "Michael Curtiz",
+                Genre = "Drama, Romance",
+                Description = "The story of Rick Blaine, a cynical world-weary ex-patriate who runs a nightclub in Casablanca, Morocco during the early stages of WWII. Despite the pressure he constantly receives from the local authorities, Rick's cafe has become a kind of haven for refugees seeking to obtain illicit letters that will help them escape to America. But when Ilsa, a former lover of Rick's, and her husband, show up to his cafe one day, Rick faces a tough challenge which will bring up unforeseen complications, heartbreak and ultimately an excruciating decision to make ",
+                Price = 6,
+                CoverArt = @"/Content/Images/Movies/casablanca_cover.jpg",
+                PromoArt = @"/Content/Images/Movies/casablanca_cover.jpg",
+                TrailerURL = @"BkL9l7qovsE"
+            };
+               var m19 = new Movie
+            {
+                Title = "Titanic",
+                ReleaseYear = 1997,
+                Director = "James Cameron",
+                Genre = "Drama, Romance",
+                Description = "84 years later, a 100 year-old woman named Rose DeWitt Bukater tells the story to her granddaughter Lizzy Calvert, Brock Lovett, Lewis Bodine, Bobby Buell and Anatoly Mikailavich on the Keldysh about her life set in April 10th 1912, on a ship called Titanic when young Rose boards the departing ship with the upper-class passengers and her mother, Ruth DeWitt Bukater, and her fiancé, Caledon Hockley. Meanwhile, a drifter and artist named Jack Dawson and his best friend Fabrizio De Rossi win third-class tickets to the ship in a game. And she explains the whole story from departure until the death of Titanic on its first and last voyage April 15th, 1912 at 2:20 in the morning.",
+                Price = 8,
+                CoverArt = @"/Content/Images/Movies/titanic_cover.jpg",
+                PromoArt = @"/Content/Images/Movies\titanic_cover.jpg",
+                TrailerURL = @"2e-eXJ6HgkQ"
+            };
+            context.Movies.AddOrUpdate(m => m.ID, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14, m15, m16, m17, m18, m19);
 
             //Seeds reviews for Interstellar
             //var rev1 = new Review
