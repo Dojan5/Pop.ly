@@ -7,7 +7,12 @@
             <h5>@Model.Title</h5>
             <p class="">
                 @Model.ReleaseYear
-                <div class="MovieCardRating">@Model.Rating</div>
+                <div class="MovieRating" data-rating=@Model.Rating>
+                    <div class="StarOuter">
+                        <div class="StarInner">
+                        </div>
+                    </div>
+                </div>
             </p>
         </div>
     </div>

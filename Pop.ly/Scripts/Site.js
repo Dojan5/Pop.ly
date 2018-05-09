@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    //Trailer overlay modal
     $('#TrailerOverlay').on('shown.bs.modal', function () {
         $('#TrailerToggle').trigger('focus')
     });
@@ -22,6 +23,8 @@
             $("#MovieGrid").html(partialViewResult);
         });
     });
+    //Rating system, stars for now, can be replaced later. See the RatingHandler function
+       
     //Owl Carousel
     $(".owl-carousel").owlCarousel({
         responsiveClass: true,
@@ -86,3 +89,5 @@ function toggleNav() {
         document.getElementById("toggleSideNav").value = "O";
     }
 }
+
+//Handles selecting the appropriate rating based on integer passed

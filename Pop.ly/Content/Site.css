@@ -1,4 +1,5 @@
-﻿body {
+﻿@import url('https://use.fontawesome.com/releases/v5.0.10/css/all.css');
+body {
     padding-bottom: 20px;
     height: 100%;
     background: linear-gradient(to bottom, #000323 0%,#000000 100%);
@@ -64,12 +65,12 @@ textarea {
     max-height: 460px;
 }
 
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-}
+    .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
 
 .carousel-caption {
     text-shadow: 2px 2px 12px #111111, 2px 2px 24px #999999;
@@ -86,9 +87,9 @@ textarea {
 
 .MovieDetailPromoBackground {
     width: 100%;
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    background-position: bottom right; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom right;
 }
 
 #DetailCover {
@@ -100,9 +101,8 @@ textarea {
     background-color: #1C0025;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 8px;
-    border:solid;
-    border-color:goldenrod;
-    
+    border: solid;
+    border-color: goldenrod;
 }
 
 #movie-details {
@@ -229,22 +229,22 @@ textarea {
 #TrailerBody {
     margin: 0;
     padding: 0;
-    
 }
 
 /* Trailer curtain*/
-#theatre{
+#theatre {
     border: inset gold 10px;
     height: 480px;
     width: 100%;
     margin: auto;
-    text-align:center;
+    text-align: center;
     line-height: 120px;
     position: relative;
     overflow: hidden;
     background: black;
     color: rgba(255,255,255, 0.3);
 }
+
 div#theatre #curtain-left, div#theatre #curtain-right {
     content: '';
     position: absolute;
@@ -255,15 +255,19 @@ div#theatre #curtain-left, div#theatre #curtain-right {
     transition: all 2s ease-out;
     transform: rotate(0deg);
     background-color: darkred;
-    background-image: linear-gradient(90deg,  transparent 10%, rgba(255,0,0,.30) 50% ,transparent 65% );
+    background-image: linear-gradient(90deg, transparent 10%, rgba(255,0,0,.30) 50%,transparent 65% );
     background-repeat: repeat;
-    box-shadow: 0 0 10px #555 ,inset 0 -60px  60px -30px  rgba(0,0,0, 1), inset 0 90px  60px -30px  rgba(0,0,0, 0.5);
+    box-shadow: 0 0 10px #555,inset 0 -60px 60px -30px rgba(0,0,0, 1), inset 0 90px 60px -30px rgba(0,0,0, 0.5);
     background-size: 80px;
 }
 
-#curtain-left { left: -10% }
+#curtain-left {
+    left: -10%;
+}
 
-#curtain-right { right: -10% }
+#curtain-right {
+    right: -10%;
+}
 
 #theatre:hover #curtain-right, div#theatre:hover #curtain-left {
     width: 0;
@@ -284,17 +288,17 @@ div#theatre #curtain-left, div#theatre #curtain-right {
     z-index: 3;
 }
 
-#theatre p:first-of-type:before {
-    content: '';
-    position: absolute;
-    border-radius: 150px;
-    box-shadow: 0 0 10px 70px rgba(255,255,255,0.4);
-    height: 0.1px;
-    width: 3px;
-    top: 6.5em;
-    left: 49%;
-    transform: rotate(25deg) skew(15deg,5deg);
-}
+    #theatre p:first-of-type:before {
+        content: '';
+        position: absolute;
+        border-radius: 150px;
+        box-shadow: 0 0 10px 70px rgba(255,255,255,0.4);
+        height: 0.1px;
+        width: 3px;
+        top: 6.5em;
+        left: 49%;
+        transform: rotate(25deg) skew(15deg,5deg);
+    }
 
 /* Movie Review Stuff*/
 
@@ -306,15 +310,12 @@ div#theatre #curtain-left, div#theatre #curtain-right {
     background-color: none;
     color: white;
     text-decoration: none;
- 
-    
 }
 
     .badge-golden:hover {
         text-decoration: none;
         color: white !important;
         box-shadow: 0 0px 8px 1px rgba(218, 165, 32, 0.5), 0 0px 12px 5px rgba(255, 140, 30, 0.125);
-     
     }
 
 /* Gradient transparent - color - transparent */
@@ -336,14 +337,14 @@ hr.golden-fade-right {
     height: 42px;
 }
 
-.MainPageHeader h3 {
-    margin: 0;
-    padding: 0;
-    margin-left: 18px;
-    padding-left: 8px;
-    border-left: 4px solid;
-    border-color: goldenrod;
-}
+    .MainPageHeader h3 {
+        margin: 0;
+        padding: 0;
+        margin-left: 18px;
+        padding-left: 8px;
+        border-left: 4px solid;
+        border-color: goldenrod;
+    }
 
 /* Owl Carousel stuff*/
 
@@ -380,7 +381,7 @@ hr.golden-fade-right {
         outline: none;
     }
 
-.owl-prev i, .owl-next i {
+    .owl-prev i, .owl-next i {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -389,19 +390,19 @@ hr.golden-fade-right {
         background-color: rgba(40,0,30,0.8);
         border-radius: 80px;
         box-shadow: 0 0px 0px 2px rgba(255, 255, 255, 0.3);
-}
+    }
 
-    .owl-prev i:hover, .owl-next i:hover {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 60px;
-        background-color: rgba(60,0,50,0.9);
-        border-radius: 80px;
-        box-shadow: 0 0px 0px 1px rgba(218, 165, 32, 0.7), 0 0px 0px 5px rgba(255, 140, 50, 0.225);
-     }
-    /*Movie Ribbon, mostly not used*/
+        .owl-prev i:hover, .owl-next i:hover {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 60px;
+            background-color: rgba(60,0,50,0.9);
+            border-radius: 80px;
+            box-shadow: 0 0px 0px 1px rgba(218, 165, 32, 0.7), 0 0px 0px 5px rgba(255, 140, 50, 0.225);
+        }
+/*Movie Ribbon, mostly not used*/
 .MovieRibbon {
     display: flex;
     max-height: 280px;
@@ -415,9 +416,9 @@ hr.golden-fade-right {
     z-index: -1;
 }
 
-.MovieRibbonContent img {
-    max-height: 260px;
-}
+    .MovieRibbonContent img {
+        max-height: 260px;
+    }
 
 .MovieRibbonController {
     display: inline-flex;
@@ -450,44 +451,44 @@ hr.golden-fade-right {
     box-shadow: 0 0px 0px 2px rgba(255, 255, 255, 0.3);
 }
 
-.MovieRibbonController i:hover {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 60px;
-    background-color: rgba(0,0,0,0.6);
-    border-radius: 80px;
-    box-shadow: 0 0px 0px 1px rgba(218, 165, 32, 0.7), 0 0px 0px 5px rgba(255, 140, 50, 0.225);
-}
+    .MovieRibbonController i:hover {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 60px;
+        background-color: rgba(0,0,0,0.6);
+        border-radius: 80px;
+        box-shadow: 0 0px 0px 1px rgba(218, 165, 32, 0.7), 0 0px 0px 5px rgba(255, 140, 50, 0.225);
+    }
 
 .RibbonContent img {
     max-height: 240px;
 }
 
-.SingleMovie{
+.SingleMovie {
     display: flex;
     width: 160px;
     height: 215px;
     background-position: center;
-    background-size:cover;
-    text-decoration:none;
-    color:white;
+    background-size: cover;
+    text-decoration: none;
+    color: white;
     margin: 12px;
     box-shadow: 0 0px 16px 3px rgba(0, 0, 0, 0.5);
 }
-.SingleMovie:Hover {
-    box-shadow: 0 0px 4px 2px rgba(218, 165, 32, 0.9), 0 0px 6px 4px rgba(255, 140, 50, 0.225), 0 0px 32px 20px rgba(0, 0, 0, 0.7);
-    text-decoration:none;
-    animation: pop 0.3 linear 1;
-    transition: all .18s ease-in-out;
-    transform:scale(1.2);
-    
-}
 
-.SingleMovie:hover .SingleMovieDetails {
-    display: flex;
-}   
+    .SingleMovie:Hover {
+        box-shadow: 0 0px 4px 2px rgba(218, 165, 32, 0.9), 0 0px 6px 4px rgba(255, 140, 50, 0.225), 0 0px 32px 20px rgba(0, 0, 0, 0.7);
+        text-decoration: none;
+        animation: pop 0.3 linear 1;
+        transition: all .18s ease-in-out;
+        transform: scale(1.2);
+    }
+
+        .SingleMovie:hover .SingleMovieDetails {
+            display: flex;
+        }
 
 .SingleMovieDetails {
     display: none;
@@ -504,10 +505,39 @@ hr.golden-fade-right {
     text-decoration: none;
 }
 
-.MovieCardWrapper:hover {
-    text-decoration: none;
-}
+    .MovieCardWrapper:hover {
+        text-decoration: none;
+    }
 
 .table-dark {
-    
 }
+
+.MovieRating {
+    display: flex;
+    background-color: red;
+    align-self: center;
+}
+
+.StarOuter {
+    display: inline-flex;
+    position: relative;
+    font-family: 'Font Awesome\ 5 Free';
+}
+
+    .StarOuter::before {
+        content: "\f006 \f006 \f006 \f006 \f006";
+    }
+
+.StarInner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+}
+
+    .StarInner::before {
+        content: "\f005 \f005 \f005 \f005 \f005";
+        color: gold;
+    }
