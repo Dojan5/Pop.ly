@@ -8,10 +8,10 @@
         @*Branding - Replace with project logo*@
         @Html.ActionLink("Pop.ly", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         @*Handles the menu icon as the screen resizes*@
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="mainNav">
             <ul class="navbar-nav">
                 <li class="navbar-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
                 <li class="navbar-item">@Html.ActionLink("Browse", "Index", "Browse", null, new { @class = "nav-link" })</li>
@@ -21,3 +21,21 @@
         </div>
     </div>
 </nav>
+
+@if (Request.IsAuthenticated && User.IsInRole("Administrator"))
+{
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark admin-nav">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#adminNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse justify-content-center" id="adminNav">
+                <ul class="navbar-nav">
+                    <li class="navbar-item">@Html.ActionLink("Movies", "ManageMovies", "Administration", null, new { @class = "nav-link" })</li>
+                    <li class="navbar-item">@Html.ActionLink("Orders", "ManageOrders", "Administration", null, new { @class = "nav-link" })</li>
+                    <li class="navbar-item">@Html.ActionLink("Customers", "ManageCustomers", "Administration", null, new { @class = "nav-link" })</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+}

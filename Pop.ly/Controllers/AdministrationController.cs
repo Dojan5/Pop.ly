@@ -17,9 +17,15 @@ namespace Pop.ly.Controllers
         {
             return View();
         }
-        public ActionResult ViewOrders()
+        public ActionResult ManageOrders()
         {
-            var model = db.Orders.Select(o => o).ToList();
+            OrderAdminViewModel model = new OrderAdminViewModel();
+            model.Populate();
+            return View(model);
+        }
+        public ActionResult ManageMovies()
+        {
+            var model = db.Movies.Select(m => m);
             return View(model);
         }
         [HttpGet]

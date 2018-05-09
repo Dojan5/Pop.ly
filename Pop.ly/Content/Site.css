@@ -31,6 +31,15 @@ textarea {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+.admin-nav {
+    height: 42px;
+    top: 57px;
+    background-color: rgba(40, 25, 61, 1);
+    border-bottom: 2px solid;
+    border-color: goldenrod;
+    z-index: 100;
+}
+
 .top-menu {
     background-color: purple;
     background: linear-gradient(to bottom, #1C0025,#28193D );
@@ -55,12 +64,12 @@ textarea {
     max-height: 460px;
 }
 
-    .carousel-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        object-position: center;
-    }
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
 
 .carousel-caption {
     text-shadow: 2px 2px 12px #111111, 2px 2px 24px #999999;
@@ -458,4 +467,8 @@ hr.golden-fade-right {
 
 .MovieCardWrapper:hover {
     text-decoration: none;
+}
+
+.table-dark {
+    
 }

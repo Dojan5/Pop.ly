@@ -245,6 +245,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AdministrationViewModels.cs" />
     <Compile Include="Models\BrowseModel.cs" />
     <Compile Include="Models\Database\Movie.cs" />
     <Compile Include="Models\Database\Order.cs" />
@@ -406,8 +407,6 @@
     <Content Include="Views\Shared\_MovieDetailPartial.cshtml" />
     <Content Include="Views\Shared\_MovieRibbonPartial.cshtml" />
     <Content Include="Views\Administration\Index.cshtml" />
-    <Content Include="Views\Shared\_AdminNavPartial.cshtml" />
-    <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Manage\_ChangePasswordPartial.cshtml" />
     <Content Include="Views\Shared\_BlankLayout.cshtml" />
     <Content Include="Views\Movie\Index.cshtml" />
@@ -418,13 +417,14 @@
     <Content Include="Views\Shared\_CustomerShippingBillingPartial.cshtml" />
     <Content Include="Views\Shared\_OrderListPartial.cshtml" />
     <Content Include="Views\ShoppingCart\PlaceOrder.cshtml" />
-    <Content Include="Views\Administration\ViewOrders.cshtml" />
+    <Content Include="Views\Administration\ManageOrders.cshtml" />
     <Content Include="Views\Shared\_OrderDetailPartial.cshtml" />
     <Content Include="Views\Order\Details.cshtml" />
     <Content Include="Views\Browse\SortByGenre.cshtml" />
     <Content Include="Views\Movie\temp.cshtml" />
     <Content Include="Views\Shared\_MovieCardPartial.cshtml" />
     <Content Include="Views\Administration\AddMovie.cshtml" />
+    <Content Include="Views\Administration\ManageMovies.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
