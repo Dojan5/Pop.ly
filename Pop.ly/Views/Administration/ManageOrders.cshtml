@@ -24,7 +24,7 @@
                     <td>@obj.Order.User.Email</td>
                     <td>@obj.Order.OrderDate</td>
                     <td>@obj.TotalCost</td>
-                    <td><button data-toggle="collapse" data-target="#Order-@obj.Order.ID" type="button" class="btn btn-secondary">View Details</button></tr>
+                    <td><a href="#" data-toggle="collapse" data-target="#Order-@obj.Order.ID">View Details</a></tr>
                 <tr>
                     <td colspan="6">
                         <div id="Order-@obj.Order.ID" class="collapse">
@@ -40,7 +40,7 @@
                                     @foreach (var row in obj.OrderRows)
                                     {
                                         <tr>
-                                            <td>@row.Movie</td>
+                                            <td><a href="/Movie/?T=@row.Movie.Title&Y=@row.Movie.ReleaseYear">@row.Movie.Title</a></td>
                                             <td>@row.Quantity</td>
                                             <td>@row.Price</td>
                                         </tr>

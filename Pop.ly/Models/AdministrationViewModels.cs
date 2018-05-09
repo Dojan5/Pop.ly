@@ -17,11 +17,19 @@ namespace Pop.ly.Models
         public void Populate()
         {
             ApplicationDbContext db = new ApplicationDbContext();
-            var AllOrders = db.Orders.Select(o => o.ID);
+            var AllOrders = db.Orders.Select(o => o.ID).ToList();
             foreach (var ID in AllOrders)
             {
-                OrderViewModel obj = new OrderViewModel();
-                obj.FillOrder(ID);
+                OrderViewModel obj = new OrderViewModel()
+                {
+                    Order = db.Orders.Where(o => o.ID == ID).Select(o => o).FirstOrDefault(),
+                    OrderRows = db.OrderRows.Where(r => r.Order.ID == ID).Select(r => r).ToList()
+                };
+                foreach (var row in obj.OrderRows)
+                {
+                    obj.TotalCost = obj.TotalCost + row.Price;
+                }
+                
                 this.AllOrders.Add(obj);
             }
         }
