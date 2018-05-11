@@ -307,7 +307,7 @@ div#theatre #curtain-left, div#theatre #curtain-right {
 }
 
 .badge-golden {
-    background-color: none;
+    background-color: darkgoldenrod;
     color: white;
     text-decoration: none;
 }

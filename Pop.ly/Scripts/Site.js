@@ -61,7 +61,8 @@ function AddToCart(id) {
     $('#AddToCart').removeClass("btn-secondary").addClass("btn-success").html("<i class=\"fas fa-check\"></i> Added");
     setTimeout(function() {
         $('#AddToCart').removeClass("btn-success").addClass("btn-secondary").html("<i class=\"fas fa-shopping-cart\"></i> Add to cart");
-    },1500);
+    }, 1500);
+    GetCartAmount();
 }
 
 //Ajax function handling removing items from the cart
@@ -91,3 +92,13 @@ function toggleNav() {
 }
 
 //Handles selecting the appropriate rating based on integer passed
+
+//Gets the number of cart items and displays it in the menu
+function GetCartAmount() {
+    $.ajax({
+        url: "/GetCartAmount",
+        type: "get"
+    }).done(function (amount) {
+        $("#MenuCartItemCount").html(amount);
+    });
+}
