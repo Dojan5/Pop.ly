@@ -8,18 +8,18 @@
 <div>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <div class="GenreCloud">
+        <div class="GenreCloud container">
                 @foreach (var genre in Model.genres)
                 {
                     <a href="#toggleSideNav" data-filter="@genre" class="badge badge-pill badge-golden GenreFilterButton">@genre</a>
                 }
             </div>
         </div>
-    <div id="main">
-        <span id="toggleSideNav" value="O" style="font-size:20px;cursor:pointer" onclick="toggleNav()">&#9776; Menu</span>
+        <div id="main">
+            <span id="toggleSideNav" value="O" style="font-size:20px;cursor:pointer" onclick="toggleNav()">&#9776; Menu</span>
+        </div>
+        <div id="MovieGrid" class="container pt-4">
+            @Html.Partial("_MovieGridPartial", Model.grid)
+        </div>
     </div>
-    <div id="MovieGrid" class="container pt-4">
-        @Html.Partial("_MovieGridPartial", Model.grid)
-    </div>
-</div>
 
