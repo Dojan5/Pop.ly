@@ -71,5 +71,25 @@ namespace Pop.ly.Controllers
             ShoppingCart.CreateOrder(userId, Cart);
             return View();
         }
+        //Get amount of items in cart
+        public ActionResult GetCartAmount()
+        {
+            ShoppingCart cart = new ShoppingCart();
+            int model;
+            if (Session["Cart"] != null)
+            {
+                cart = (ShoppingCart)Session["Cart"];
+            }
+            if (cart.Items != null)
+            {
+                model = cart.Items.Count();
+            }
+            else
+            {
+                model = 0;
+            }
+
+            return View(model);
+        }
     }
 }
