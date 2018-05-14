@@ -8,24 +8,32 @@
 
 <div class="container pt-4 mt-4">
 
-    <div class="CustomerDetailContainer">
+    <div class="CustomerDetailContainer mt-4 mb-4">
         <div class="DetailColumn">
             <div class="CustomerPortrait">
                 <i class="fas fa-user"></i>
             </div>
             <div>
                 <ul class="CustomerDetailsList">
-                    <li>@Model.Customer.FirstName @Model.Customer.LastName</li>
-                    <li>@Model.Customer.Email</li>
-                    <li>@Model.Customer.PhoneNumber</li>
+                    <li><b>@Model.Customer.FirstName @Model.Customer.LastName</b></li>
+                    <li><i class="fa fa-envelope" aria-hidden="true"></i> @Model.Customer.Email</li>
+                    <li><i class="fa fa-phone" aria-hidden="true"></i> @Model.Customer.PhoneNumber</li>
                 </ul>
             </div>
         </div>
         <div class="DetailColumn">
-            @Model.Customer.BillingAddress
+            <ul class="CustomerDetailsList">
+                <li><b>Billing Address</b></li>
+                <li>@Model.Customer.BillingAddress</li>
+                <li>@Model.Customer.BillingZip @Model.Customer.BillingCity</li>
+            </ul>
         </div>
         <div class="DetailColumn">
-            @Model.Customer.DeliveryAddress
+            <ul class="CustomerDetailsList">
+                <li><b>Shipping Address</b></li>
+                <li>@Model.Customer.DeliveryAddress</li>
+                <li>@Model.Customer.DeliveryZip @Model.Customer.DeliveryCity</li>
+            </ul>
         </div>
     </div>
 

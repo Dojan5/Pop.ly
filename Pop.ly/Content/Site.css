@@ -547,16 +547,27 @@ hr.golden-fade-right {
 /* Stuff pertaining to the detailed customer view */
 .CustomerDetailContainer {
     display: flex;
-    background: red;
 }
 
 .DetailColumn {
     display: flex;
     flex: 1;
-    background-color: darkblue;
+    margin: 8px;
+    padding: 8px;
+}
+.CustomerPortrait{
+    padding: 12px;
+    margin-right: 12px;
+    border: 2px solid;
+    background-color: red;
+    border-radius: 128px;
+}
+.CustomerPortrait i {
+    font-size: 48px;
 }
 
-.CustomerPortrait i {
-    height: 200px;
-    width: 200px;
+.CustomerDetailsList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
