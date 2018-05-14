@@ -17,7 +17,7 @@
             @foreach (var obj in Model)
             {
                 <tr>
-                    <th scope="row">@obj.FirstName</th>
+                    <th>@obj.FirstName</th>
                     <td>@obj.LastName</td>
                     <td>@obj.Email</td>
                     <td><a href="/Administration/CustomerDetails/?M=@obj.Email">View Details</a></td>
