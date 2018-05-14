@@ -304,6 +304,7 @@
     <Content Include="Content\Images\ph1.svg" />
     <Content Include="Content\Images\ph2.svg" />
     <Content Include="Content\Images\ph3.svg" />
+    <Content Include="Content\Images\star\stars.png" />
     <Content Include="Content\owl-carousel.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />

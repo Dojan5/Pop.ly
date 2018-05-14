@@ -7,11 +7,8 @@
             <h5>@Model.Title</h5>
             <p class="">
                 @Model.ReleaseYear
-                <div class="MovieRating" data-rating=@Model.Rating>
-                    <div class="StarOuter">
-                        <div class="StarInner">
-                        </div>
-                    </div>
+                <div class="MovieRating">
+                    <span class="stars">@Model.Rating</span>
                 </div>
             </p>
         </div>
