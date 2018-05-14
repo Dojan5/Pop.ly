@@ -307,7 +307,7 @@ div#theatre #curtain-left, div#theatre #curtain-right {
 }
 
 .badge-golden {
-    background-color: darkgoldenrod;
+    background-color: goldenrod;
     color: white;
     text-decoration: none;
 }
@@ -544,4 +544,19 @@ hr.golden-fade-right {
 
 
 
+/* Stuff pertaining to the detailed customer view */
+.CustomerDetailContainer {
+    display: flex;
+    background: red;
+}
 
+.DetailColumn {
+    display: flex;
+    flex: 1;
+    background-color: darkblue;
+}
+
+.CustomerPortrait i {
+    height: 200px;
+    width: 200px;
+}

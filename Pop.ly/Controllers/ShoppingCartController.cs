@@ -56,7 +56,7 @@ namespace Pop.ly.Controllers
             {
                 cart = (ShoppingCart)Session["Cart"];
             }
-            if (cart.Items.Count > 0)
+            if (cart.Items.Count() >= 1)
             {
                 cart.Items.RemoveAt(index);
             }
