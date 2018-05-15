@@ -432,6 +432,7 @@
     <Content Include="Views\Administration\ManageMovies.cshtml" />
     <Content Include="Views\Administration\ManageCustomers.cshtml" />
     <Content Include="Views\Administration\CustomerDetails.cshtml" />
+    <Content Include="Views\Shared\_CartPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

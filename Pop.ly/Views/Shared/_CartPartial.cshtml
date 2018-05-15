@@ -1,0 +1,39 @@
+﻿@model Pop.ly.Models.ShoppingCart
+
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Title</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Items)
+        {
+            var indx = "CartRow" + @Model.Items.IndexOf(item).ToString();
+            var itemCost = item.CostPerItem * item.Quantity;
+            <tr id=@indx>
+                <td><img src=@item.Movie.CoverArt style="max-height: 240px;" class="img-responsive" /></td>
+                <td><a href="/Movie/?T=@item.Movie.Title&Y=@item.Movie.ReleaseYear">@item.Movie.Title</a></td>
+                <td>
+                    <button onclick="DecreaseItemQuantity(@item.Movie.ID)" type="button" style="border-radius:150px;" class="btn btn-golden"><i class="fas fa-minus"></i></button>
+                    @item.Quantity
+                    <button onclick="IncreaseItemQuantity(@item.Movie.ID)" type="button" style="border-radius:150px;" class="btn btn-golden"><i class="fas fa-plus"></i></button>
+                </td>
+                <td>@itemCost</td>
+                <td><button id="RemoveFromCart" type="button" style="border-radius:48px;" class="btn btn-danger" onclick="RemoveFromCart(@Model.Items.IndexOf(item))"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+            </tr>
+        }
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>@Model.TotalCost</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>

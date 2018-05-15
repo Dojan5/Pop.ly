@@ -25,7 +25,7 @@ namespace Pop.ly.Models
             TotalCost = 0;
             foreach (var i in this.Items)
             {
-                TotalCost += i.Movie.Price * i.Quantity;
+                TotalCost += i.CostPerItem * i.Quantity;
             }
         }
         //Method takes a cart and a customer and creates an order, as well as appropriate rows out of it.

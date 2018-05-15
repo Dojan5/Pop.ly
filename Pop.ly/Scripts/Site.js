@@ -14,17 +14,18 @@
         });
     });
     //Script handling search bar
-    $("#searchbar").bind("enterKey",function () {
-        var filter = $(this).val();
-        $.ajax({
-            url: "/Browse/Search/?Q=" + filter,
-            type: "GET",
-        }).done(function (partialViewResult) {
-            $("#MovieGrid").html(partialViewResult);
-        });
+    var typingTimer;
+    var doneTypingInterval = 150;
+    $("#searchbar").on('keyup', function () {
+        clearTimeout(typingTimer);
+        typingTimer = setTimeout(doneTyping, doneTypingInterval);
     });
+    $("#searchbar").on('keydown', function () {
+        clearTimeout(typingTimer);
+    });
+    //
     //Rating system, stars for now, can be replaced later. See the RatingHandler function
-       
+
     //Owl Carousel
     $(".owl-carousel").owlCarousel({
         responsiveClass: true,
@@ -60,23 +61,24 @@ function AddToCart(id) {
     $.ajax({
         url: "/ShoppingCart/AddToCart/?movieID=" + id,
         type: "get"
+    }).done(function () {
+        $('#AddToCart').removeClass("btn-secondary").addClass("btn-success").html("<i class=\"fas fa-check\"></i> Added");
+        setTimeout(function () {
+            $('#AddToCart').removeClass("btn-success").addClass("btn-secondary").html("<i class=\"fas fa-shopping-cart\"></i> Add to cart");
+        }, 1500);
+        ReloadMenuBar();
     });
-    $('#AddToCart').removeClass("btn-secondary").addClass("btn-success").html("<i class=\"fas fa-check\"></i> Added");
-    setTimeout(function() {
-        $('#AddToCart').removeClass("btn-success").addClass("btn-secondary").html("<i class=\"fas fa-shopping-cart\"></i> Add to cart");
-    }, 1500);
-    GetCartAmount();
-} 
+}
 
 //Ajax function handling removing items from the cart
 function RemoveFromCart(index) {
     $.ajax({
         url: "/ShoppingCart/RemoveFromCart/?index=" + index,
-        type: "get"
+        type: "GET",
+    }).done(function (partialViewResult) {
+        $("#CartContainer").html(partialViewResult);
+        ReloadMenuBar();
     });
-    var ID = "#CartRow" + index;
-    $(ID).remove();
-  
 };
 
 //Increments items in the cart
@@ -84,6 +86,9 @@ function IncreaseItemQuantity(index) {
     $.ajax({
         url: "/ShoppingCart/IncreaseItemQuantity/?movieID=" + index,
         type: "get"
+    }).done(function (partialViewResult) {
+        $("#CartContainer").html(partialViewResult);
+        ReloadMenuBar();
     });
 };
 //decrements items in the cart
@@ -91,12 +96,14 @@ function DecreaseItemQuantity(index) {
     $.ajax({
         url: "/ShoppingCart/DecreaseItemQuantity/?movieID=" + index,
         type: "get"
+    }).done(function (partialViewResult) {
+        $("#CartContainer").html(partialViewResult);
+        ReloadMenuBar();
     });
 };
 //Toggles the filter pane on the movie browse page
 function toggleNav() {
-    if (document.getElementById("toggleSideNav").value == "O")
-    {
+    if (document.getElementById("toggleSideNav").value == "O") {
         document.getElementById("mySidenav").style.width = "250px";
         document.getElementById("main").style.marginLeft = "250px";
         document.getElementById("toggleSideNav").value = "C";
@@ -119,14 +126,28 @@ function GetCartAmount() {
         $("#MenuCartItemCount").html(amount);
     });
 }
-$.fn.stars = function() {
-    return $(this).each(function() {
+$.fn.stars = function () {
+    return $(this).each(function () {
         //get the value
         var val = parseFloat($(this).html());
         var size = Math.max(0, (Math.min(5, val))) * 16;
-        var $span = $ ('<span />').width(size);
+        var $span = $('<span />').width(size);
         $(this).html($span);
     });
 }
 
+//Reloads the menubar to refresh the item count in the cart
+function ReloadMenuBar() {
+    $("#TopMenu").load(location.href + " #TopMenu>*", "");
+};
 
+//Function that runs when someone stops typing in the search bar
+function doneTyping() {
+    var filter = $("#searchbar").val();
+    $.ajax({
+        url: "/Browse/Search/?Q=" + filter,
+        type: "GET",
+    }).done(function (partialViewResult) {
+        $("#MovieGrid").html(partialViewResult);
+    });
+};

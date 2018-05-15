@@ -61,6 +61,7 @@ namespace Pop.ly.Controllers
                 cart.Items.Add(item);
             }
             //Passes our cart into the session
+            cart.CalculateTotal();
             Session["Cart"] = cart;
             return null;
         }
@@ -76,8 +77,9 @@ namespace Pop.ly.Controllers
             {
                 cart.Items.RemoveAt(index);
             }
+            cart.CalculateTotal();
             Session["Cart"] = cart;
-            return null;
+            return PartialView("_CartPartial", cart);
         }
         //Increments an item in the cart by one
         public ActionResult IncreaseItemQuantity(int movieID)
@@ -114,38 +116,11 @@ namespace Pop.ly.Controllers
                 cart.Items.Add(item);
             }
             //Passes our cart into the session
+            cart.CalculateTotal();
             Session["Cart"] = cart;
-            return null;
+            return PartialView("_CartPartial", cart);
         }
-
-        //PlaceOrder
-        public ActionResult PlaceOrder()
-        {
-            ShoppingCart Cart = (ShoppingCart)Session["Cart"];
-            var userId = User.Identity.GetUserId();
-            ShoppingCart.CreateOrder(userId, Cart);
-            return View();
-        }
-        //Get amount of items in cart
-        public ActionResult GetCartAmount()
-        {
-            ShoppingCart cart = new ShoppingCart();
-            int model;
-            if (Session["Cart"] != null)
-            {
-                cart = (ShoppingCart)Session["Cart"];
-            }
-            if (cart.Items != null)
-            {
-                model = cart.Items.Count();
-            }
-            else
-            {
-                model = 0;
-            }
-
-            return View(model);
-        }
+        //Decreases the amount of items in the cart
         public ActionResult DecreaseItemQuantity(int movieID)
         {
             ShoppingCart cart = new ShoppingCart();
@@ -158,24 +133,29 @@ namespace Pop.ly.Controllers
 
             var existingItem = cart.Items.SingleOrDefault(i => i.Movie.ID == movieID);
 
-            if (existingItem != null)
+            //So long as the quantity of the item is larger than one, you can reduce it.
+            //If the quantity is 1, you remove the item. Else you'd end up having to pay the customer for ordering a negative amount of movies
+            if (existingItem.Quantity > 1)
             {
 
                 existingItem.Quantity--;
             }
             else
             {
-                CartItem item = new CartItem
-                {
-                    Movie = SelectedMovie,
-                    Quantity = 1,
-                    CostPerItem = SelectedMovie.Price
-                };
-                cart.Items.Add(item);
+                cart.Items.Remove(existingItem);
             }
+            cart.CalculateTotal();
             Session["Cart"] = cart;
-            return null;
-         
+            return PartialView("_CartPartial", cart);
+
+        }
+        //PlaceOrder
+        public ActionResult PlaceOrder()
+        {
+            ShoppingCart Cart = (ShoppingCart)Session["Cart"];
+            var userId = User.Identity.GetUserId();
+            ShoppingCart.CreateOrder(userId, Cart);
+            return View();
         }
     }
 }   
