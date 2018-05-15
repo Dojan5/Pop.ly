@@ -30,12 +30,15 @@ namespace Pop.ly.Models
             }
         }
         //Method takes a cart and a customer and creates an order, as well as appropriate rows out of it.
-        public static void CreateOrder(string UserID, ShoppingCart Cart)
+        public static void CreateOrder(string UserID, ShoppingCart Cart, string FirstName, string LastName, string Address, string Zip, string City)
         {
             ApplicationDbContext db = new ApplicationDbContext();
             Order NewOrder = new Order
             {
-
+                Recipient = FirstName + " " + LastName,
+                DeliveryAddress = Address,
+                DeliveryZip = Zip,
+                DeliveryCity = City,
                 User = db.Users.Find(UserID),
                 OrderDate = DateTime.Now
             };

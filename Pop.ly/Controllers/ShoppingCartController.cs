@@ -164,15 +164,12 @@ namespace Pop.ly.Controllers
         [HttpPost]
         public ActionResult Checkout(CheckoutViewModel model)
         {
-            return View();
-        }
-        //PlaceOrder
-        public ActionResult PlaceOrder()
-        {
-            ShoppingCart Cart = (ShoppingCart)Session["Cart"];
-            var userId = User.Identity.GetUserId();
-            ShoppingCart.CreateOrder(userId, Cart);
-            return View();
+            model.Cart = (ShoppingCart)Session["Cart"];
+            model.User = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
+            ShoppingCart.CreateOrder(model.User.Id, model.Cart, model.RecipientName, model.RecipientSurname, model.ShippingAddress, model.ShippingZip, model.ShippingCity);
+            model.OrderCreated = true;
+            Session.Clear();
+            return View(model);
         }
     }
 }   
