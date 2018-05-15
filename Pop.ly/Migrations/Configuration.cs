@@ -518,12 +518,6 @@ namespace Pop.ly.Migrations
                 UserID = context.Users.SingleOrDefault(u => u.Email == "pink_butterflies@thepact.com").Id,
                 OrderDate = DateTime.Now
             };
-            var order3 = new Order
-            {
-                ID = 3,
-                UserID = context.Users.SingleOrDefault(u => u.Email == "hannah_rockz@hotmail.com").Id,
-                OrderDate = DateTime.Now
-            };
             context.Orders.AddOrUpdate(or => or.ID, order1, order2);
             //Seeds rows for the orders
             var or1r1 = new OrderRow
