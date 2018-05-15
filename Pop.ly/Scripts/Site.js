@@ -108,7 +108,8 @@ function AddToCart(id) {
     }).done(function () {
         $('#AddToCart').removeClass("btn-secondary").addClass("btn-success").html("<i class=\"fas fa-check\"></i> Added");
         setTimeout(function () {
-            $('#AddToCart').removeClass("btn-success").addClass("btn-secondary").html("<i class=\"fas fa-shopping-cart\"></i> Add to cart");
+            var price = $("#AddToCart").data("cost");
+            $('#AddToCart').removeClass("btn-success").addClass("btn-secondary").html("<i class=\"fas fa-shopping-cart\"></i> Add to Cart <span class=\"badge badge-light\"><i class=\"fas fa-dollar-sign\"></i> " + price + "</span>");
         }, 1500);
         ReloadMenuBar();
     });

@@ -220,6 +220,10 @@ body {
 
 /* Movie detail trailer stuff */
 
+#TrailerToggle {
+    background-color: darkgoldenrod;
+}
+
 #TrailerDialog {
     background-color: black;
     box-shadow: 0 0px 0px 1px rgba(218, 165, 32, 0.5), 0 0px 0px 5px rgba(255, 140, 30, 0.125);
@@ -508,7 +512,6 @@ hr.golden-fade-right {
 }
 
 .MovieDetailCardHeader {
-
 }
 
 .MovieDetailCardContent {
