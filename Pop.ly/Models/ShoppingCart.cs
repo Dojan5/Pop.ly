@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Pop.ly.Models.Database;
+using System.ComponentModel.DataAnnotations;
 
 namespace Pop.ly.Models
 {
@@ -55,5 +56,24 @@ namespace Pop.ly.Models
             db.Orders.Add(NewOrder);
             db.SaveChanges();
         }
+    }
+
+    public class CheckoutViewModel
+    {
+        public ApplicationUser User { get; set; }
+        [Display(Name = "Recipient Name")]
+        public string RecipientName { get; set; }
+        [Display(Name = "Recipient Surname")]
+        public string RecipientSurname { get; set; }
+        [Display(Name = "Address")]
+        public string ShippingAddress { get; set; }
+        [Display(Name = "Zip")]
+        public string ShippingZip { get; set; }
+        [Display(Name = "City")]
+        public string ShippingCity { get; set; }
+        [Display(Name = "Ship to billing address")]
+        public bool ShipToUser { get; set; } = true;
+        public bool OrderCreated = false;
+        public ShoppingCart Cart { get; set; }
     }
 }

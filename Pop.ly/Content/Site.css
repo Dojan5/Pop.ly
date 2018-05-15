@@ -589,3 +589,37 @@ a {
 .SiteLogo {
     height: 32px;
 }
+/* Checkout CSS */
+.OrderShippingDetails {
+    display: flex;
+    flex-direction: row;
+}
+.AddressField {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #18052e 0%, #220321 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    box-shadow: 0 0px 8px 1px rgba(218, 165, 32, 0.5), 0 0px 12px 5px rgba(255, 140, 30, 0.125);
+    width: 50%;
+    margin: 12px;
+}
+
+.AddressFieldHeader {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 6px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.AddressFieldContent {
+    margin: 12px 24px 0px 24px;
+    flex: 1;
+}
+
+.AddressFieldFooter {
+    margin: 12px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}

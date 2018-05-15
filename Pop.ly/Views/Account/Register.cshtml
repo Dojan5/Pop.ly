@@ -22,6 +22,15 @@
                 @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @placeholder = "Last Name" })
             </div>
             <div class="form-group">
+                @Html.TextBoxFor(m => m.BillingAddress, new { @class = "form-control", @placeholder = "Address" })
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.BillingZip, new { @class = "form-control", @placeholder = "Zip Code" })
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.BillingCity, new { @class = "form-control", @placeholder = "City" })
+            </div>
+            <div class="form-group">
                 @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "email@address.com", @type = "email" })
             </div>
             <div class="form-group">

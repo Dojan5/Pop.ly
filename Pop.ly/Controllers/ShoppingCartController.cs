@@ -6,11 +6,13 @@ using System.Web.Mvc;
 using Pop.ly.Models;
 using Pop.ly.Models.Database;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace Pop.ly.Controllers
 {
     public class ShoppingCartController : Controller
     {
+        protected UserManager<ApplicationUser> UserManager { get; set; }
         ApplicationDbContext db = new ApplicationDbContext();
         // GET: ShoppingCart
         public ActionResult Index()
@@ -147,7 +149,22 @@ namespace Pop.ly.Controllers
             cart.CalculateTotal();
             Session["Cart"] = cart;
             return PartialView("_CartPartial", cart);
-
+        }
+        //Checkout
+        [Authorize]
+        [HttpGet]
+        public ActionResult Checkout()
+        {
+            CheckoutViewModel model = new CheckoutViewModel();
+            model.Cart = (ShoppingCart)Session["Cart"];
+            model.User = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
+            return View(model);
+        }
+        [Authorize]
+        [HttpPost]
+        public ActionResult Checkout(CheckoutViewModel model)
+        {
+            return View();
         }
         //PlaceOrder
         public ActionResult PlaceOrder()

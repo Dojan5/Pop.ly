@@ -54,7 +54,40 @@
     $(function () {
         $('span.stars').stars();
     });
+
+    //$("#ShipToUser").checked(function () {
+    //    alert("checked");
+    //});
+
+    //$("#ShipToUser").unchecked(function () {
+    //    alert("unchecked");
+    //});
+
+
+    //Handles the checkbox in the checkout
+    ToggleShippingAddress();
+     $("#ShipToUser").click(ToggleShippingAddress);
 });
+
+
+//Functions outside of DocumentReady. These will not run unless you call them manually
+//Handles the checkbox in the checkout
+function ToggleShippingAddress() {
+    if ($("#ShipToUser:checked").length == 1) {
+
+        $("#RecipientName").prop("readonly", "readonly").val($("#UserFirstName").val());
+        $("#RecipientSurname").prop("readonly", "readonly").val($("#UserLastName").val());
+        $("#ShippingAddress").prop("readonly", "readonly").val($("#UserBillingAddress").val());
+        $("#ShippingZip").prop("readonly", "readonly").val($("#UserBillingZip").val());
+        $("#ShippingCity").prop("readonly", "readonly").val($("#UserBillingCity").val());
+    } else {
+        $("#RecipientName").removeAttr("readonly").val("");
+        $("#RecipientSurname").removeAttr("readonly").val("");
+        $("#ShippingAddress").removeAttr("readonly").val("");
+        $("#ShippingZip").removeAttr("readonly").val("");
+        $("#ShippingCity").removeAttr("readonly").val("");
+    }
+};
 
 //Ajax function handling adding new items to the cart
 function AddToCart(id) {
@@ -69,6 +102,7 @@ function AddToCart(id) {
         ReloadMenuBar();
     });
 }
+
 
 //Ajax function handling removing items from the cart
 function RemoveFromCart(index) {

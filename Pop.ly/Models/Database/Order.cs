@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using Pop.ly.Models;
 using Pop.ly.Models.Database;
+using System.ComponentModel.DataAnnotations;
 
 namespace Pop.ly.Models.Database
 {
@@ -12,6 +13,14 @@ namespace Pop.ly.Models.Database
         public int ID { get; set; }
         public int UserID { get; set; }
         public DateTime OrderDate { get; set; }
+        [Display(Name = "Recipient")]
+        public string Recipient { get; set; }
+        [Display(Name = "Delivery Address")]
+        public string DeliveryAddress { get; set; }
+        [Display(Name = "Delivery Zip")]
+        public string DeliveryZip { get; set; }
+        [Display(Name = "Delivery City")]
+        public string DeliveryCity { get; set; }
 
         public virtual ApplicationUser User { get; set; }
         public virtual ICollection<OrderRow> OrderRows { get; set; }
