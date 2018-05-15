@@ -83,5 +83,6 @@ namespace Pop.ly.Models.Database
     {
         public Movie Movie { get; set; }
         public List<Review> Reviews { get; set; }
+        public Review Review = new Review();
     }
 }

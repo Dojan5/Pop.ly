@@ -66,7 +66,18 @@
 
     //Handles the checkbox in the checkout
     ToggleShippingAddress();
-     $("#ShipToUser").click(ToggleShippingAddress);
+    $("#ShipToUser").click(ToggleShippingAddress);
+
+    //Submits a review
+    $("#SubmitReview").click(function () {
+        var MovieID = $("#SubmitReview").data("movieid");
+        var Score = 5;
+        var ReviewText = $("#ReviewText").val();
+        $.ajax({
+            url: "/Movie/CreateReview/?ReviewedMovieID=" + MovieID + "&ReviewScore=" + Score + "&ReviewContent=" + ReviewText,
+            type: "get"
+        });
+    });
 });
 
 

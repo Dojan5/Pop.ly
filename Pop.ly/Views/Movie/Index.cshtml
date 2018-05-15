@@ -8,15 +8,14 @@
 
 @if (Request.IsAuthenticated)
 {
-
-        <form id="ReviewForm" class="col-md-4 offset-4 p-4">
-            <div class="form-group">
-                <textarea class="form-control" id="ReviewText" rows="3" style="width: 100%;"></textarea>
-            </div>
-            <div class="form-group text-right">
-                <button type="button" class="btn btn-secondary">Submit</button>
-            </div>
-        </form>
+    <form id="ReviewForm" class="col-md-4 offset-4 p-4">
+        <div class="form-group">
+            <textarea class="form-control" id="ReviewText" rows="3" style="width: 100%;"></textarea>
+        </div>
+        <div class="form-group text-right">
+            <button id="SubmitReview" type="button" data-movieid="@Model.Movie.ID" class="btn btn-secondary">Submit</button>
+        </div>
+    </form>
 
 }
 
