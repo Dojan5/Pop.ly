@@ -65,6 +65,18 @@ namespace Pop.ly.Models.Database
                 return false;
             }
         }
+        //Updates movie rating
+        public void UpdateMovieRating()
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            var Reviews = db.Reviews.Where(r => r.MovieID == this.ID).Select(r => r.Rating).ToList();
+            int TotalRating = 0;
+            foreach (var score in Reviews)
+            {
+                TotalRating = TotalRating + score;
+            }
+            this.Rating = TotalRating / Reviews.Count();
+        }
         
     }
     public class MovieIndexViewModel
