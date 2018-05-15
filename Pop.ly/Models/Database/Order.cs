@@ -11,7 +11,7 @@ namespace Pop.ly.Models.Database
     public class Order
     {
         public int ID { get; set; }
-        public int UserID { get; set; }
+        public string UserID { get; set; }
         public DateTime OrderDate { get; set; }
         [Display(Name = "Recipient")]
         public string Recipient { get; set; }

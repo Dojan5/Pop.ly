@@ -71,7 +71,7 @@
     //Submits a review
     $("#SubmitReview").click(function () {
         var MovieID = $("#SubmitReview").data("movieid");
-        var Score = 5;
+        var Score = 3;
         var ReviewText = $("#ReviewText").val();
         $.ajax({
             url: "/Movie/CreateReview/?ReviewedMovieID=" + MovieID + "&ReviewScore=" + Score + "&ReviewContent=" + ReviewText,
