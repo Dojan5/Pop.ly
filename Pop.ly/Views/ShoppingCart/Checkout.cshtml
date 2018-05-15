@@ -12,8 +12,12 @@
         </div>
     }
 
-    <div class="OrderShippingDetails">
-        <div ID="UserAddressField" class="AddressField">
+    <div id="CartContainer">
+        @Html.Partial("_CartPartial", Model.Cart)
+    </div>
+
+    <div class="OrderShippingDetails pt-4">
+        <div ID="UserAddressField" class="AddressField HoverGlow">
             <div class="AddressFieldHeader">
                 <h2>Billing Address</h2>
             </div>
@@ -48,7 +52,7 @@
                 </div>
             </div>
         </div>
-        <div ID="OrderAddressField" class="AddressField">
+        <div ID="OrderAddressField" class="AddressField HoverGlow">
             <div class="AddressFieldHeader">
                 <h2>Shipping Address</h2>
             </div>
@@ -85,9 +89,6 @@
                 </div>
             }
         </div>
-    </div>
-    <div id="CartContainer">
-        @Html.Partial("_CartPartial", Model.Cart)
     </div>
 </div>
 

@@ -107,6 +107,7 @@ body {
 
 .review-section {
     display: flex;
+    flex-flow: row wrap;
     min-width: 100%;
     background: linear-gradient(to bottom, rgb(14, 0, 36), rgb(10, 0, 10));
     box-shadow: 0px 0px 12px 16px rgba(0, 0, 0, 0.4) inset;
@@ -551,7 +552,7 @@ span stars span {
 }
 
 .btn-golden{
-    font-size: 8px;
+    font-size: 10px;
     background-color: goldenrod;
     color: white;
 }
@@ -604,7 +605,8 @@ a {
     background: linear-gradient(to bottom, #18052e 0%, #220321 100%);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    box-shadow: 0 0px 8px 1px rgba(218, 165, 32, 0.5), 0 0px 12px 5px rgba(255, 140, 30, 0.125);
+    border: 1px solid;
+    border-color: rgba(218, 165, 32, 0.06);
     width: 50%;
     margin: 12px;
 }
@@ -626,4 +628,134 @@ a {
     text-align: center;
     justify-content: center;
     align-items: center;
+}
+
+/* Shopping cart container */
+
+.ShoppingCartContainer {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column wrap;
+
+}
+
+.CartItemContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+.CartContainerHead {
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(to bottom, #18052e 0%, #220321 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    border: 1px solid;
+    border-color: rgba(218, 165, 32, 0.06);
+    font-size: 22px;
+    width: 260px;
+    padding: 12px;
+    margin: 12px;
+    border-radius: 120px;
+    box-shadow: 0 0px 8px 1px rgba(218, 165, 32, 0.5), 0 0px 12px 5px rgba(255, 140, 30, 0.125);
+}
+
+.CartItem {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #18052e 0%, #220321 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    border: 1px solid;
+    border-color: rgba(218, 165, 32, 0.06);
+    margin: 8px;
+    max-width: 48%;
+}
+
+.CartItemImage {
+    display:flex;
+    margin-left: 8px;
+    width: 110px;
+    height: 175px;
+    background-size: cover;
+    margin-bottom: 8px;
+}
+
+.CartItemDescription {
+    flex: 1;
+    padding: 6px
+}
+
+.CartItemCost {
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.35);
+    height: 32px;
+    width: 72px;
+    margin-top: auto;
+    border-radius: 12px 0px 0px 0px;
+}
+
+.CartItemHeader {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0,0,0,0.35);
+}
+
+.CartItemHeaderMovieTitle {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.CartItemRemove {
+    overflow: hidden;
+}
+
+.CartItemBody {
+    display: flex;
+    flex-direction: row;
+    padding-top: 8px;
+}
+
+.CartItemFooter {
+    display: flex;
+    background-color: rgba(0,0,0,0.35);
+    justify-content: center;
+}
+
+.CartItemCountContainer {
+    margin: 4px;
+    border: 2px solid;
+    border-color: rgba(255, 255, 255, 0.14);
+    border-radius: 140px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.CartItemCountContainer button {
+    border-radius: 0px;
+    background-color: #18021d ;
+}
+
+.CartItemQuantity {
+    display: flex;
+    width: 64px;
+    justify-content: center;
+    align-items: center;
+    background-color: #3d083d;
+    text-shadow: 0 0px 8px 1px rgba(218, 165, 32, 0.5), 0 0px 12px 5px rgba(255, 140, 30, 0.125);
+}
+
+.HoverGlow:hover {
+    box-shadow: 0 0px 8px 1px rgba(218, 165, 32, 0.5), 0 0px 12px 5px rgba(255, 140, 30, 0.125);
 }
