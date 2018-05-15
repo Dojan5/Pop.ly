@@ -66,7 +66,7 @@ function AddToCart(id) {
         $('#AddToCart').removeClass("btn-success").addClass("btn-secondary").html("<i class=\"fas fa-shopping-cart\"></i> Add to cart");
     }, 1500);
     GetCartAmount();
-}
+} 
 
 //Ajax function handling removing items from the cart
 function RemoveFromCart(index) {

@@ -28,6 +28,18 @@ namespace Pop.ly.Controllers
             var model = db.Movies.Select(m => m);
             return View(model);
         }
+        public ActionResult ManageCustomers()
+        {
+            var model = db.Users.Select(u => u).ToList();
+            return View(model);
+        }
+        public ActionResult CustomerDetails(string M)
+        {
+            CustomerAdminViewModel model = new CustomerAdminViewModel();
+            model.Customer = db.Users.Where(u => u.Email == M).Select(u => u).FirstOrDefault();
+            model.Orders.PopulateFromCustomer(model.Customer.Id);
+            return View(model);
+        }
         [HttpGet]
         public ActionResult AddMovie()
         {

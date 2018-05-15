@@ -307,7 +307,7 @@ div#theatre #curtain-left, div#theatre #curtain-right {
 }
 
 .badge-golden {
-    background-color: darkgoldenrod;
+    background-color: goldenrod;
     color: white;
     text-decoration: none;
 }
@@ -535,18 +535,27 @@ a {
   
 }
 
-a:hover {
-    color: darkgoldenrod;
-    text-shadow: 0 0px 8px 1px rgba(218, 165, 32, 0.5), 0 0px 12px 5px rgba(255, 140, 30, 0.125);
-}
-.GenreFilterButton{
-   margin:2px;
-   background-color: #1C0025 !important;
-   color: goldenrod !important;
+
+
+/* Stuff pertaining to the detailed customer view */
+.CustomerDetailContainer {
+    display: flex;
 }
 
-.SiteLogo {
-    margin-right: 12px;
-    height: 32px;
-    overflow: hidden;
+.DetailColumn {
+    display: flex;
+    flex: 1;
+    margin: 8px;
+    padding: 8px;
 }
+.CustomerPortrait{
+    padding: 12px;
+    margin-right: 12px;
+    border: 2px solid;
+    background-color: red;
+    border-radius: 128px;
+}
+.CustomerPortrait i {
+    font-size: 48px;
+}
+

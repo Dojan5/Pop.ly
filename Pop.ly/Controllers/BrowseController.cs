@@ -13,10 +13,14 @@ namespace Pop.ly.Controllers
     {
         ApplicationDbContext db = new ApplicationDbContext();
         // GET: Browse
-        public ActionResult Index()
+        public ActionResult Index(int? Year)
         {
             BrowseModel model = new BrowseModel();
             model.Populate();
+            if ( Year != null )
+            {
+                model.grid.movies = db.Movies.Where(m => m.ReleaseYear == Year).Select(m => m).ToList();
+            }
             return View(model);
         }
         public ActionResult Year(int Year)
