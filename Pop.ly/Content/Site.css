@@ -254,7 +254,7 @@ div#theatre #curtain-left, div#theatre #curtain-right {
     width: 61%;
     transition: all 2s ease-out;
     transform: rotate(0deg);
-    background-color: darkred;
+    background-color:#800c0c; 
     background-image: linear-gradient(90deg, transparent 10%, rgba(255,0,0,.30) 50%,transparent 65% );
     background-repeat: repeat;
     box-shadow: 0 0 10px #555,inset 0 -60px 60px -30px rgba(0,0,0, 1), inset 0 90px 60px -30px rgba(0,0,0, 0.5);
@@ -303,7 +303,7 @@ div#theatre #curtain-left, div#theatre #curtain-right {
 /* Movie Review Stuff*/
 
 #ReviewForm {
-    background-color: red;
+    background-color: rgb(10, 2, 22);
 }
 
 .badge-golden {
@@ -511,36 +511,29 @@ hr.golden-fade-right {
 
 .table-dark {
 }
-
+ /*Rating System*/
 .MovieRating {
     display: flex;
-    background-color: red;
     align-self: center;
 }
-
-.StarOuter {
-    display: inline-flex;
-    position: relative;
-    font-family: 'Font Awesome\ 5 Free';
+span.stars, span.stars span{
+    display: block;
+    background: url(/Content/Images/star/stars.png) 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
+}
+span stars span {
+    background-position: 0 0;
 }
 
-    .StarOuter::before {
-        content: "\f006 \f006 \f006 \f006 \f006";
-    }
-
-.StarInner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
+.btn-golden{
+    background-color: goldenrod;
 }
 
-    .StarInner::before {
-        content: "\f005 \f005 \f005 \f005 \f005";
-        color: gold;
-    }
+a {
+    color: gold;
+  
+}
 
 
 
@@ -566,8 +559,3 @@ hr.golden-fade-right {
     font-size: 48px;
 }
 
-.CustomerDetailsList {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}

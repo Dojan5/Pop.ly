@@ -39,7 +39,7 @@
                 items: 7
             },
             1600: {
-                items: 10
+                items: 9
             }
         },
         margin: 10,
@@ -49,7 +49,10 @@
         nav: true,
         navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
     });
-    
+    //Added the stars function
+    $(function () {
+        $('span.stars').stars();
+    });
 });
 
 //Ajax function handling adding new items to the cart
@@ -76,6 +79,20 @@ function RemoveFromCart(index) {
   
 };
 
+//Increments items in the cart
+function IncreaseItemQuantity(index) {
+    $.ajax({
+        url: "/ShoppingCart/IncreaseItemQuantity/?movieID=" + index,
+        type: "get"
+    });
+};
+//decrements items in the cart
+function DecreaseItemQuantity(index) {
+    $.ajax({
+        url: "/ShoppingCart/DecreaseItemQuantity/?movieID=" + index,
+        type: "get"
+    });
+};
 //Toggles the filter pane on the movie browse page
 function toggleNav() {
     if (document.getElementById("toggleSideNav").value == "O")
@@ -102,3 +119,14 @@ function GetCartAmount() {
         $("#MenuCartItemCount").html(amount);
     });
 }
+$.fn.stars = function() {
+    return $(this).each(function() {
+        //get the value
+        var val = parseFloat($(this).html());
+        var size = Math.max(0, (Math.min(5, val))) * 16;
+        var $span = $ ('<span />').width(size);
+        $(this).html($span);
+    });
+}
+
+

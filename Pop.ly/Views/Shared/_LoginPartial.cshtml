@@ -1,9 +1,19 @@
 ﻿@using Microsoft.AspNet.Identity
 @using Pop.ly.Models;
 
+@{
+    ShoppingCart cart = new ShoppingCart();
+    if (HttpContext.Current.Session["Cart"]!= null)
+    {
+        cart = (ShoppingCart)HttpContext.Current.Session["Cart"];
+    }
+    var itemCount = cart.Items.Count();
+
+}
+
 <ul class="navbar-nav ml-auto">
-    <li class="nav-item">
-        <a id="CartMenuItem" class="nav-link" href="/ShoppingCart/"><i class="fas fa-shopping-cart"></i> Cart <span id="MenuCartItemCount" class="badge badge-pill badge-secondary"></span></a>
+    <li class="nav-item dropdown">
+        <a id="CartMenuItem" class="nav-link" href="/ShoppingCart/"><i class="fas fa-shopping-cart"></i> Cart <span id="MenuCartItemCount" class="badge badge-pill badge-golden">@itemCount</span></a>
     </li>
     @if (Request.IsAuthenticated)
     {
