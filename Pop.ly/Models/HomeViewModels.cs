@@ -25,7 +25,7 @@ namespace Pop.ly.Models
 
         public void Populate()
         {
-            Carousel = db.Movies.OrderByDescending(m => m.ReleaseYear).Take(3);
+            Carousel = db.Movies.OrderBy(m => Guid.NewGuid()).Take(3);
             Popular = db.Movies.Select(m => m);
             RecentlyReleased = db.Movies.Where(m => m.ReleaseYear >= DateTime.Now.Year -1);
             OldestMovies = db.Movies.OrderBy(m => m.ReleaseYear).Select(m => m).Take(12).ToList();
