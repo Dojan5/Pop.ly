@@ -75,9 +75,11 @@ namespace Pop.ly.Models.Database
             {
                 TotalRating = TotalRating + score;
             }
-            this.Rating = TotalRating / Reviews.Count();
+            if (TotalRating != 0 && Reviews.Count() != 0)
+            {
+                this.Rating = TotalRating / Reviews.Count();
+            }
         }
-        
     }
     public class MovieIndexViewModel
     {
