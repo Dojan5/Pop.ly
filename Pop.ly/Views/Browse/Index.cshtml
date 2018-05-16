@@ -8,7 +8,7 @@
         <div class="GenreCloud container">
             @foreach (var genre in Model.genres)
             {
-                <a href="#toggleSideNav" data-filter="@genre" class="badge badge-pill badge-golden GenreFilterButton">@genre</a>
+                <a href="#toggleSideNav" data-filter="@genre" class="GenreFilterButton">@genre</a>
             }
 
         </div>
@@ -24,3 +24,4 @@
     </div>
 </div>
 
+@*<a href="#toggleSideNav" data-filter="@genre" class="badge badge-pill badge-golden GenreFilterButton">@genre</a>*@
