@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using Pop.ly.Models;
+using System.Data.Entity.Migrations;
 
 namespace Pop.ly.Models.Database
 {
@@ -78,6 +79,8 @@ namespace Pop.ly.Models.Database
             if (TotalRating != 0 && Reviews.Count() != 0)
             {
                 this.Rating = TotalRating / Reviews.Count();
+                db.Movies.AddOrUpdate(this);
+                db.SaveChanges();
             }
         }
     }
