@@ -48,6 +48,11 @@ namespace Pop.ly.Controllers
             db.SaveChanges();
             return null;
         }
+        public ActionResult UpdateReviews(int MovieID)
+        {
+            IEnumerable<Review> model = db.Reviews.Where(r => r.MovieID == MovieID).Select(r => r);
+            return PartialView("_CustomerReviewsPartial", model);
+        }
        
     }
 }

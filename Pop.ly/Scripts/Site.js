@@ -71,11 +71,19 @@
     //Submits a review
     $("#SubmitReview").click(function () {
         var MovieID = $("#SubmitReview").data("movieid");
-        var Score = 3;
-        var ReviewText = $("#ReviewText").val();
+        var Score = 4;
+        console.log(Score);
+        var ReviewText = $("#ReviewText option:selected").val();
         $.ajax({
             url: "/Movie/CreateReview/?ReviewedMovieID=" + MovieID + "&ReviewScore=" + Score + "&ReviewContent=" + ReviewText,
             type: "get"
+        });
+        $.ajax({
+            url: "/Movie/UpdateReviews/?MovieID=" + MovieID,
+            type: "GET",
+        }).done(function (partialViewResult) {
+            $("#ReviewContainer").html(partialViewResult);
+            ReloadMenuBar();
         });
     });
 });
