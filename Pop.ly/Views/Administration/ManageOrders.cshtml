@@ -24,10 +24,10 @@
                     <th scope="row">@obj.Order.ID</th>
                     <td>@obj.Order.User.FirstName @obj.Order.User.LastName</td>
                     <td>@obj.Order.User.Email</td>
+                    <td>@obj.Order.OrderDate</td>
                     <td>@obj.Order.Recipient</td>
                     <td>@obj.Order.DeliveryAddress<br />
-                     @obj.Order.DeliveryZip <b>@obj.Order.DeliveryCity</b></td>
-                    <td>@obj.Order.OrderDate</td>
+                    @obj.Order.DeliveryZip <b>@obj.Order.DeliveryCity</b></td>
                     <td>@obj.TotalCost</td>
                     <td><a href="#" data-toggle="collapse" data-target="#Order-@obj.Order.ID">View Details</a>
                 </tr>
