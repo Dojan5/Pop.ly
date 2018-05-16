@@ -43,13 +43,16 @@ namespace Pop.ly.Controllers
         [HttpGet]
         public ActionResult AddMovie()
         {
-            return View();
+            AddMovieViewModel model = new AddMovieViewModel();
+            return View(model);
         }
         [HttpPost]
-        public ActionResult AddMovie(Movie obj)
+        public ActionResult AddMovie(AddMovieViewModel obj)
         {
-            Movie.SaveMovieToDB(obj);
-            return View();
+            Movie.SaveMovieToDB(obj.Movie);
+            obj.MovieAdded = true;
+            obj.Message = "The movie has been added";
+            return View(obj);
         }
     }
 }

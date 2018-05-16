@@ -58,4 +58,11 @@ namespace Pop.ly.Models
         public ApplicationUser Customer { get; set; }
         public OrderAdminViewModel Orders = new OrderAdminViewModel();
     }
+
+    public class AddMovieViewModel
+    {
+        public Movie Movie { get; set; }
+        public string Message { get; set; }
+        public bool MovieAdded { get; set; } = false;
+    }
 }
