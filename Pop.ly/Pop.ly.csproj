@@ -233,7 +233,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdministrationController.cs" />
     <Compile Include="Controllers\BrowseController.cs" />
-    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -245,6 +244,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AdministrationViewModels.cs" />
     <Compile Include="Models\BrowseModel.cs" />
     <Compile Include="Models\Database\Movie.cs" />
     <Compile Include="Models\Database\Order.cs" />
@@ -266,16 +266,25 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\Movies\Alice1999_Cover.jpg" />
     <Content Include="Content\Images\Movies\Alice1999_promo.jpg" />
+    <Content Include="Content\Images\Movies\Basterds_Cover.jpg" />
+    <Content Include="Content\Images\Movies\Basterds_Promo.jpg" />
     <Content Include="Content\Images\Movies\beast2017_cover.jpg" />
     <Content Include="Content\Images\Movies\beast2017_promo.jpg" />
     <Content Include="Content\Images\Movies\BookClub_cover.jpg" />
     <Content Include="Content\Images\Movies\BookClub_promo.jpg" />
     <Content Include="Content\Images\Movies\casablanca_cover.jpg" />
     <Content Include="Content\Images\Movies\casablanca_promo.jpg" />
+    <Content Include="Content\Images\Movies\DarkKnight_Cover.jpg" />
+    <Content Include="Content\Images\Movies\DarkKnight_Promo.jpg" />
     <Content Include="Content\Images\Movies\Deadpool2_cover.jpg" />
     <Content Include="Content\Images\Movies\Deadpool2_promo.jpg" />
+    <Content Include="Content\Images\Movies\FistfulOfDollars_cover.jpg" />
+    <Content Include="Content\Images\Movies\FistfulOfDollars_promo.jpg" />
     <Content Include="Content\Images\Movies\gamenight_cover.jpg" />
     <Content Include="Content\Images\Movies\gamenight_promo.jpg" />
+    <Content Include="Content\Images\Movies\Gladiator_Cover.jpg" />
+    <Content Include="Content\Images\Movies\Gladiator_Promo.jpg" />
+    <Content Include="Content\Images\Movies\IAmLegend_Cover.jpg" />
     <Content Include="Content\Images\Movies\iceage3_cover.jpg" />
     <Content Include="Content\Images\Movies\iceage3_promo.jpg" />
     <Content Include="Content\Images\Movies\Interstellar_Cover.jpg" />
@@ -284,6 +293,8 @@
     <Content Include="Content\Images\Movies\jurassic_world_promo.jpg" />
     <Content Include="Content\Images\Movies\LifeOfTheParty_cover.jpg" />
     <Content Include="Content\Images\Movies\LifeOfTheParty_promo.jpg" />
+    <Content Include="Content\Images\Movies\LotR1_Cover.jpg" />
+    <Content Include="Content\Images\Movies\LotR1_Promo.jpg" />
     <Content Include="Content\Images\Movies\moana_cover.jpg" />
     <Content Include="Content\Images\Movies\moana_promo.jpg" />
     <Content Include="Content\Images\Movies\notebook_cover.jpg" />
@@ -294,15 +305,16 @@
     <Content Include="Content\Images\Movies\readyplayerone_promo.jpg" />
     <Content Include="Content\Images\Movies\showdogs_cover.jpg" />
     <Content Include="Content\Images\Movies\showdogs_promo.jpg" />
-    <Content Include="Content\Images\Movies\Spartacis1960_promo.jpg" />
-    <Content Include="Content\Images\Movies\spartacus1960_cover.jpg" />
     <Content Include="Content\Images\Movies\TheGreatestShowman_cover.jpg" />
     <Content Include="Content\Images\Movies\TheGreatestShowman_promo.jpg" />
+    <Content Include="Content\Images\Movies\Titanic_Cover.jpg" />
+    <Content Include="Content\Images\Movies\Titanic_Promo.JPG" />
     <Content Include="Content\Images\Movies\TombRaider2018_cover.jpg" />
     <Content Include="Content\Images\Movies\TombRaider2018_promo.jpg" />
     <Content Include="Content\Images\ph1.svg" />
     <Content Include="Content\Images\ph2.svg" />
     <Content Include="Content\Images\ph3.svg" />
+    <Content Include="Content\Images\star\stars.png" />
     <Content Include="Content\owl-carousel.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -410,8 +422,6 @@
     <Content Include="Views\Shared\_MovieDetailPartial.cshtml" />
     <Content Include="Views\Shared\_MovieRibbonPartial.cshtml" />
     <Content Include="Views\Administration\Index.cshtml" />
-    <Content Include="Views\Shared\_AdminNavPartial.cshtml" />
-    <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Manage\_ChangePasswordPartial.cshtml" />
     <Content Include="Views\Shared\_BlankLayout.cshtml" />
     <Content Include="Views\Movie\Index.cshtml" />
@@ -422,13 +432,18 @@
     <Content Include="Views\Shared\_CustomerShippingBillingPartial.cshtml" />
     <Content Include="Views\Shared\_OrderListPartial.cshtml" />
     <Content Include="Views\ShoppingCart\PlaceOrder.cshtml" />
-    <Content Include="Views\Administration\ViewOrders.cshtml" />
+    <Content Include="Views\Administration\ManageOrders.cshtml" />
     <Content Include="Views\Shared\_OrderDetailPartial.cshtml" />
     <Content Include="Views\Order\Details.cshtml" />
     <Content Include="Views\Browse\SortByGenre.cshtml" />
     <Content Include="Views\Movie\temp.cshtml" />
     <Content Include="Views\Shared\_MovieCardPartial.cshtml" />
     <Content Include="Views\Administration\AddMovie.cshtml" />
+    <Content Include="Views\Administration\ManageMovies.cshtml" />
+    <Content Include="Views\Administration\ManageCustomers.cshtml" />
+    <Content Include="Views\Administration\CustomerDetails.cshtml" />
+    <Content Include="Views\Shared\_CartPartial.cshtml" />
+    <Content Include="Views\ShoppingCart\Checkout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -8,16 +8,23 @@
 
 @if (Request.IsAuthenticated)
 {
-
-        <form id="ReviewForm" class="col-md-4 offset-4 p-4">
-            <div class="form-group">
-                <textarea class="form-control" id="ReviewText" rows="3" style="width: 100%;"></textarea>
-            </div>
-            <div class="form-group text-right">
-                <button type="button" class="btn btn-secondary">Submit</button>
-            </div>
-        </form>
+    <form id="ReviewForm" class="col-md-4 offset-4 p-4">
+        <div class="form-group row">
+            <textarea class="form-control" id="ReviewText" rows="3" style="width: 100%;"></textarea>
+        </div>
+        <div class="form-group text-right row">
+            <select id="#Score" class="form-control col-7 mx-2">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <button id="SubmitReview" type="button" data-movieid="@Model.Movie.ID" class="btn btn-secondary col-4">Submit</button>
+        </div>
+    </form>
 
 }
-
-@Html.Partial("_CustomerReviewsPartial", @Model.Reviews)
+<div id="#ReviewContainer">
+    @Html.Partial("_CustomerReviewsPartial", @Model.Reviews)
+</div>
