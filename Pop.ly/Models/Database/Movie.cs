@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using Pop.ly.Models;
-using System.Data.Entity.Migrations;
 
 namespace Pop.ly.Models.Database
 {
@@ -66,28 +65,11 @@ namespace Pop.ly.Models.Database
                 return false;
             }
         }
-        //Updates movie rating
-        public void UpdateMovieRating()
-        {
-            ApplicationDbContext db = new ApplicationDbContext();
-            var Reviews = db.Reviews.Where(r => r.MovieID == this.ID).Select(r => r.Rating).ToList();
-            int TotalRating = 0;
-            foreach (var score in Reviews)
-            {
-                TotalRating = TotalRating + score;
-            }
-            if (TotalRating != 0 && Reviews.Count() != 0)
-            {
-                this.Rating = TotalRating / Reviews.Count();
-                db.Movies.AddOrUpdate(this);
-                db.SaveChanges();
-            }
-        }
+        
     }
     public class MovieIndexViewModel
     {
         public Movie Movie { get; set; }
         public List<Review> Reviews { get; set; }
-        public Review Review = new Review();
     }
 }

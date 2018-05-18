@@ -5,8 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Pop.ly.Models;
 using Pop.ly.Models.Database;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.AspNet.Identity;
+
 
 namespace Pop.ly.Controllers
 {
@@ -33,25 +32,6 @@ namespace Pop.ly.Controllers
         {
             Movie model = db.Movies.Where(m => m.Title == "Interstellar").Select(m => m).FirstOrDefault();
             return View(model);
-        }
-        public ActionResult CreateReview(int ReviewedMovieID, int ReviewScore, string ReviewContent)
-        {
-            var User = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
-            Review MovieReview = new Review
-            {
-                MovieID = ReviewedMovieID,
-                Rating = ReviewScore,
-                Comment = ReviewContent,
-                UserID = User.Id
-            };
-            db.Reviews.Add(MovieReview);
-            db.SaveChanges();
-            return null;
-        }
-        public ActionResult UpdateReviews(int MovieID)
-        {
-            IEnumerable<Review> model = db.Reviews.Where(r => r.MovieID == MovieID).Select(r => r);
-            return PartialView("_CustomerReviewsPartial", model);
         }
        
     }

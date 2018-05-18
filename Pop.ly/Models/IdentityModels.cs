@@ -23,6 +23,12 @@ namespace Pop.ly.Models
         public string BillingZip { get; set; }
         [Display(Name = "Billing City")]
         public string BillingCity { get; set; }
+        [Display(Name = "Delivery Address")]
+        public string DeliveryAddress { get; set; }
+        [Display(Name = "Delivery Zip")]
+        public string DeliveryZip { get; set; }
+        [Display(Name = "Delivery City")]
+        public string DeliveryCity { get; set; }
         [Display(Name = "Phone Number")]
         public override string PhoneNumber { get; set; }
 
@@ -36,7 +42,6 @@ namespace Pop.ly.Models
             return userIdentity;
         }
     }
-    
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

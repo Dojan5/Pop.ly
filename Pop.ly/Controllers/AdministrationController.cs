@@ -17,42 +17,21 @@ namespace Pop.ly.Controllers
         {
             return View();
         }
-        public ActionResult ManageOrders()
+        public ActionResult ViewOrders()
         {
-            OrderAdminViewModel model = new OrderAdminViewModel();
-            model.Populate();
-            return View(model);
-        }
-        public ActionResult ManageMovies()
-        {
-            var model = db.Movies.Select(m => m);
-            return View(model);
-        }
-        public ActionResult ManageCustomers()
-        {
-            var model = db.Users.Select(u => u).ToList();
-            return View(model);
-        }
-        public ActionResult CustomerDetails(string M)
-        {
-            CustomerAdminViewModel model = new CustomerAdminViewModel();
-            model.Customer = db.Users.Where(u => u.Email == M).Select(u => u).FirstOrDefault();
-            model.Orders.PopulateFromCustomer(model.Customer.Id);
+            var model = db.Orders.Select(o => o).ToList();
             return View(model);
         }
         [HttpGet]
         public ActionResult AddMovie()
         {
-            AddMovieViewModel model = new AddMovieViewModel();
-            return View(model);
+            return View();
         }
         [HttpPost]
-        public ActionResult AddMovie(AddMovieViewModel obj)
+        public ActionResult AddMovie(Movie obj)
         {
-            Movie.SaveMovieToDB(obj.Movie);
-            obj.MovieAdded = true;
-            obj.Message = "The movie has been added";
-            return View(obj);
+            Movie.SaveMovieToDB(obj);
+            return View();
         }
     }
 }

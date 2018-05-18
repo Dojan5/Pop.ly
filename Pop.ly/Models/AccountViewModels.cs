@@ -77,13 +77,6 @@ namespace Pop.ly.Models
         [Display (Name ="Last Name")]
         public string LastName { get; set; }
 
-        [Display(Name = "Address")]
-        public string BillingAddress { get; set; }
-        [Display(Name = "Zip")]
-        public string BillingZip { get; set; }
-        [Display(Name = "City")]
-        public string BillingCity { get; set; }
-
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
